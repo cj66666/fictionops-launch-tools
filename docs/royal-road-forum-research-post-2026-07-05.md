@@ -107,6 +107,14 @@ Status on 2026-07-05 15:07:29 +08:00:
 This is an account availability blocker, not market feedback. Do not treat the lack of a
 Royal Road forum post as a negative signal about author demand.
 
+Update on 2026-07-05:
+
+- User reports that the Royal Road account has now been registered successfully and is
+  available in the logged-in Google Chrome browser.
+- This removes the previous account-availability blocker.
+- Do not post automatically. Posting still requires action-time confirmation of the exact
+  account, category, title, body, and no-links condition.
+
 Recommended replacement for the current soft-launch loop:
 
 1. Continue monitoring the live site, Buttondown, and Vercel Analytics.
