@@ -11,6 +11,7 @@
     "test": "vitest run",
     "verify:routes": "node scripts/verify-launch-readiness.mjs",
     "verify:local-preview": "node scripts/verify-local-preview.mjs",
+    "submit:indexnow": "node scripts/submit-indexnow.mjs",
     "verify": "npm run lint && npm test && npm run build && npm audit --omit=dev",
     "verify:public": "node scripts/require-public-site-url.mjs && npm run verify"
   },

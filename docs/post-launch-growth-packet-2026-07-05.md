@@ -25,6 +25,22 @@ when executed.
 4. First no-link workflow research post.
 5. Feedback triage and first public iteration.
 
+## Bing / IndexNow Packet
+
+Bing Webmaster Tools still needs browser/account access for dashboard import and reporting.
+IndexNow can be executed without the dashboard as a search-engine notification path.
+
+Executed readiness:
+
+- IndexNow key file: `https://fictionops.com/cf75c61bc21243e88f63089c89aeedde.txt`
+- Local file: `public/cf75c61bc21243e88f63089c89aeedde.txt`
+- Submit script: `npm run submit:indexnow`
+- Source of URLs: `https://fictionops.com/sitemap.xml`
+
+The IndexNow protocol requires a UTF-8 key file hosted on the same host, then a POST request
+containing `host`, `key`, `keyLocation`, and `urlList`. Bing's public documentation describes
+this as a way to submit changed URLs after hosting the API key.
+
 ## Search Console Packet
 
 Approval needed:

@@ -201,6 +201,31 @@ npm run build
 npm run verify:routes -- --origin=https://fictionops.com
 ```
 
+## Bing / IndexNow Procedure
+
+This can be run before Bing Webmaster dashboard import if browser access is unstable.
+
+1. Confirm the key file is deployed:
+
+```text
+https://fictionops.com/cf75c61bc21243e88f63089c89aeedde.txt
+```
+
+2. Submit sitemap URLs to Bing's IndexNow endpoint:
+
+```bash
+npm run submit:indexnow
+```
+
+3. Expected result:
+
+```text
+[indexnow] status 200
+```
+
+4. Bing Webmaster Tools dashboard import can still be completed later for reporting and
+verification history.
+
 ## Analytics Procedure
 
 Only run after explicit provider approval.
