@@ -187,6 +187,11 @@ Executed:
 
 Recommended first channel: `r/royalroad`.
 
+Execution packet:
+
+- `docs/community-research-post-2026-07-05.md`
+- `data/community-feedback-template.csv`
+
 Post type:
 
 - workflow research
