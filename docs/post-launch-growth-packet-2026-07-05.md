@@ -229,9 +229,25 @@ After any approved post or public feedback:
 3. Prioritize changes that improve launch trust, tool clarity, or signup conversion.
 4. Do not build Pro/payment features until there is concrete waitlist or interview evidence.
 
+## Post-Launch Audit Hardening
+
+Executed on 2026-07-05 after the deployment audit.
+
+- Confirmed the reported apex/www redirect loop was stale: production now keeps `fictionops.com`
+  as canonical and redirects `www.fictionops.com` to apex.
+- Fixed the middleware redirect helper so non-standard local/preview ports are stripped when
+  redirecting to the public apex host.
+- Updated the Report-Only CSP builder to dedupe repeated sources and include the Buttondown
+  origin in `form-action` when `NEXT_PUBLIC_EMAIL_FORM_ACTION` is configured.
+- Added public `icon.png` and `apple-icon.png` assets and wired them through app metadata.
+- Added explicit noindex metadata to the branded not-found route.
+- Production deployment: `dpl_3YLVxYad532iML11UmbV8ENVUmZC`.
+- Git commit: `0b0211c` (`Harden launch redirects and headers`).
+- Verification: `npm run lint`, `npm test` (16 files / 54 tests), public build, production
+  route verifier, live icon checks, live Buttondown form check, and live CSP check all passed.
+
 ## Not Approved Yet
 
-- Email provider connection.
 - Reddit/Royal Road/Discord posting.
 - Private outreach.
 - Payment or account system.
