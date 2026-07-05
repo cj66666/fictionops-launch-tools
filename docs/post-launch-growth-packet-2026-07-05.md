@@ -36,6 +36,9 @@ Executed readiness:
 - Local file: `public/cf75c61bc21243e88f63089c89aeedde.txt`
 - Submit script: `npm run submit:indexnow`
 - Source of URLs: `https://fictionops.com/sitemap.xml`
+- Production deployment: `dpl_HtbP7YgSF7RM8F39uchHysVbq28X`
+- Submission result on 2026-07-05: 20 sitemap URLs submitted to `https://www.bing.com/indexnow`;
+  Bing returned HTTP `202 Accepted`.
 
 The IndexNow protocol requires a UTF-8 key file hosted on the same host, then a POST request
 containing `host`, `key`, `keyLocation`, and `urlList`. Bing's public documentation describes

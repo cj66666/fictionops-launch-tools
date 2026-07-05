@@ -223,6 +223,8 @@ npm run submit:indexnow
 [indexnow] status 200
 ```
 
+Bing may also return `202 Accepted` for a received batch submission.
+
 4. Bing Webmaster Tools dashboard import can still be completed later for reporting and
 verification history.
 
