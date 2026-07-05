@@ -115,6 +115,7 @@ Executed:
 Conversion event tracking prepared:
 
 - Implementation record: `docs/conversion-event-tracking-2026-07-05.md`.
+- Deploy approval packet: `docs/conversion-event-deploy-approval-2026-07-05.md`.
 - Added official `@vercel/analytics` package for Vercel custom events.
 - Events prepared: `cta_click`, `email_signup_submit`, `email_signup_invalid`, and
   `workbench_section_click`.
