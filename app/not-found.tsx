@@ -1,6 +1,15 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowRight, SearchX } from "lucide-react";
 import { PublicShell } from "@/components/PublicShell";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  robots: {
+    index: false,
+    follow: true
+  }
+};
 
 export default function NotFoundPage() {
   return (

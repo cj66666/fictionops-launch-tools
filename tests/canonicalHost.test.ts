@@ -18,5 +18,13 @@ describe("canonicalHostRedirectUrl", () => {
   it("does not redirect local preview hosts", () => {
     expect(canonicalHostRedirectUrl("http://127.0.0.1:3102/app", "127.0.0.1:3102")).toBeNull();
   });
-});
 
+  it("drops non-standard ports when redirecting to the public canonical host", () => {
+    const redirectUrl = canonicalHostRedirectUrl(
+      "http://www.fictionops.com:3112/app",
+      "www.fictionops.com:3112"
+    );
+
+    expect(redirectUrl?.toString()).toBe("https://fictionops.com/app");
+  });
+});

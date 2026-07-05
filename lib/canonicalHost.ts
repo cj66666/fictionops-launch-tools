@@ -10,7 +10,7 @@ export function canonicalHostRedirectUrl(requestUrl: string, host: string | null
 
   const url = new URL(requestUrl);
   url.hostname = APEX_HOST;
+  url.port = "";
   url.protocol = "https:";
   return url;
 }
-

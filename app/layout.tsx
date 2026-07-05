@@ -36,7 +36,11 @@ export const metadata: Metadata = {
     }
   },
   icons: {
-    icon: "/favicon.svg"
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" }
+    ],
+    apple: "/apple-icon.png"
   },
   openGraph: {
     title: "FictionOps - Royal Road Launch Tools",
