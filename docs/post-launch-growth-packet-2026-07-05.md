@@ -124,6 +124,14 @@ Conversion event tracking prepared:
 - Deployment status: implemented locally and verified; production deploy still requires
   approval because pushing code to `master` triggers the public Vercel deployment.
 
+Deployed after approval:
+
+- Approved head: `806a913`.
+- Production deployment: `dpl_r1i2LCtt7f6obud4hTwii6kL9uqx`.
+- Alias: `https://fictionops.com`.
+- Verification: homepage, `/app`, and `/signup` returned HTTP 200; `www` redirected to apex;
+  Vercel analytics code was present in production JS chunks; Buttondown form remained present.
+
 ## Email Capture Packet
 
 Recommended first choice: Buttondown.
@@ -289,6 +297,13 @@ Action taken locally:
   editable launch-ops runway planning.
 - Kept the strategic wedge focused on launch workflow: checklist, swaps, community rules, stats
   notes, and backlog readiness.
+
+Deployed after approval:
+
+- Production deployment: `dpl_r1i2LCtt7f6obud4hTwii6kL9uqx`.
+- Verification: Patreon calculator page no longer contains `chapterchronicles.com`, now includes
+  official Patreon sources and the benchmark-boundary copy; `/app` no longer contains fake
+  Royal Road example story URLs.
 
 Soft-launch message should now avoid "better data tool" framing and lead with:
 

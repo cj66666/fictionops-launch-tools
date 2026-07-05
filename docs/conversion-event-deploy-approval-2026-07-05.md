@@ -77,3 +77,28 @@ Deploy only after the user confirms:
 ```text
 批准推送并部署 61b5246
 ```
+
+## Execution Result
+
+Executed after user approval on 2026-07-05.
+
+- Approved deploy head: `806a913` (`Sharpen launch ops positioning`).
+- GitHub push: `master` updated from `8232a81` to `806a913`.
+- Vercel production deployment: `dpl_r1i2LCtt7f6obud4hTwii6kL9uqx`.
+- Production URL: `https://fictionops-launch-tools-marft99d4-jingchens-projects-753863a8.vercel.app`.
+- Alias: `https://fictionops.com`.
+- Build command: `npm run build:public`.
+- Build result: ready, 31 routes generated.
+
+Post-deploy verification:
+
+- `https://fictionops.com/` returned HTTP 200.
+- `https://fictionops.com/app` returned HTTP 200.
+- `https://fictionops.com/signup` returned HTTP 200.
+- `https://www.fictionops.com/` returned 308 to `https://fictionops.com/`.
+- Patreon calculator page no longer contains `chapterchronicles.com`.
+- Patreon calculator page contains official Patreon pricing and paid-tier setup sources.
+- Patreon calculator page contains the new benchmark-boundary copy.
+- `/app` no longer contains fake `royalroad.com/fiction/example` URLs.
+- `/app` still contains the Buttondown form action.
+- Production JS chunks contain Vercel analytics code from the official package.
