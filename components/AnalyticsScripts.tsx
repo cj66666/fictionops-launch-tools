@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { getAnalyticsConfig } from "@/lib/analytics";
 
 export function AnalyticsScripts() {
