@@ -12,11 +12,13 @@ Captured with Playwright CLI:
 
 - `output/playwright/fictionops-public-home-desktop-2026-07-05.png`
 - `output/playwright/fictionops-public-app-mobile-2026-07-05.png`
+- `output/playwright/fictionops-soft-launch-fixes-app-mobile-2026-07-05.png`
 
 ## Result
 
 - Desktop public homepage renders correctly on `https://fictionops.com`.
 - Mobile workbench renders correctly on `https://fictionops.com/app`.
+- Updated mobile workbench shows the shoutout swap `Import` control and local save marker without obvious overflow.
 - No blank render, obvious overlap, or broken first-screen layout was observed in the captured screenshots.
 
 ## Supporting Checks

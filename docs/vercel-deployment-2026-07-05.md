@@ -17,6 +17,13 @@ Deployment:
 - Alias: `https://fictionops-launch-tools.vercel.app`
 - Inspector: `https://vercel.com/jingchens-projects-753863a8/fictionops-launch-tools/u9Cpg5Z6P1quunmhYpgs3A1LyFJp`
 
+Latest production update after soft-launch gap fixes:
+
+- ID: `dpl_28Xp1nLvhFAd4xw7dQ7yeDQKgGvx`
+- URL: `https://fictionops-launch-tools-49kw6hnw4-jingchens-projects-753863a8.vercel.app`
+- Alias: `https://fictionops.com`
+- Status: Ready
+
 ## Build
 
 Build command:
