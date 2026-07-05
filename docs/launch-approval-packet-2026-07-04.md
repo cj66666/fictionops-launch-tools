@@ -47,7 +47,9 @@ Operational runbook after approval:
   - `npm run verify:local-preview` passed as a local production preview preflight.
   - LLMs.txt hardening passed with 13 test files, 37 tests, and 31 build routes.
   - Claude Code frontend-expansion review fixes were applied and reverified.
-  - Browser QA passed on desktop/mobile.
+- Browser QA passed on desktop/mobile.
+- Vercel deployment is live at `https://fictionops-launch-tools.vercel.app`.
+- `fictionops.com` and `www.fictionops.com` are attached to Vercel but require Cloudflare DNS changes before they resolve.
 
 ## Recommended Approval Sequence
 
@@ -63,7 +65,10 @@ Approve in this order to keep risk controlled:
 
 ## Decision 1: Domain
 
-Recommendation: check and buy `fictionops.com` if available.
+Selected target domain: `fictionops.com`.
+
+Status: user confirmed `fictionops.com` is already purchased. No DNS change or public
+deployment has been performed by Codex.
 
 Fallback order:
 
@@ -79,7 +84,7 @@ Reasoning:
 - Keeps room for launch, swaps, stats, Patreon/backlog, and future author ops.
 - Matches the current product name.
 
-Human approval required before registrar lookup/purchase.
+Explicit human approval is still required before DNS changes or deployment.
 
 ## Decision 2: Public Deployment
 
@@ -88,7 +93,7 @@ Recommended target: Vercel.
 Required environment variable:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://<approved-domain-or-preview-url>
+NEXT_PUBLIC_SITE_URL=https://fictionops.com
 ```
 
 Pre-deploy commands:
@@ -96,7 +101,7 @@ Pre-deploy commands:
 ```bash
 npm run verify
 npm run verify:local-preview
-NEXT_PUBLIC_SITE_URL=https://<approved-origin> npm run build:public
+NEXT_PUBLIC_SITE_URL=https://fictionops.com npm run build:public
 ```
 
 Post-deploy checks:
@@ -124,7 +129,7 @@ Post-deploy checks:
 Route-level post-deploy command:
 
 ```bash
-npm run verify:routes -- --origin=https://<approved-origin>
+npm run verify:routes -- --origin=https://fictionops.com
 ```
 
 This check validates route text, canonical URLs, OpenGraph URLs, sitemap URLs, robots sitemap URL, and core static routes against the approved origin.

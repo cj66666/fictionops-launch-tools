@@ -51,12 +51,18 @@ Implemented surfaces:
 - Plan completion audit added to distinguish completed local execution from human-gated public actions.
 - Public launch runbook added for approved deployment, capture, analytics, Search Console, posting, and rollback.
 - Feature acceptance packet added for local human review before public launch approval.
+- Vercel deployment completed at `https://fictionops-launch-tools.vercel.app`.
+- `fictionops.com` and `www.fictionops.com` are attached to the Vercel project, pending Cloudflare DNS changes by the user.
 
 ## Runtime
 
 Production preview:
 
 `http://127.0.0.1:3102`
+
+User-owned target domain for public configuration:
+
+`https://fictionops.com`
 
 The production server was restarted after the final production build.
 
@@ -153,6 +159,7 @@ Evidence screenshots:
 - `docs/plan-completion-audit-2026-07-05.md`
 - `docs/public-launch-runbook-2026-07-05.md`
 - `docs/feature-acceptance-packet-2026-07-05.md`
+- `docs/vercel-deployment-2026-07-05.md`
 - `.gitignore`
 - `output/playwright/fictionops-home-desktop-2026-07-05.png`
 - `output/playwright/fictionops-app-desktop-2026-07-05.png`
@@ -181,8 +188,7 @@ Concept reference:
 
 The following remain blocked until separately approved:
 
-- Public deployment.
-- Domain purchase.
+- DNS changes.
 - Reddit / Royal Road / Discord posting.
 - Private messages or author outreach.
 - Discord joining or interaction.

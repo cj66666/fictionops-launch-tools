@@ -9,6 +9,7 @@ without a matching approval.
 ## Current Local Baseline
 
 - Local production preview: `http://127.0.0.1:3102`
+- User-owned target domain: `fictionops.com`
 - Latest local baseline commit: `022ef38` (`Record local launch baseline`)
 - App: static/no-login Next.js public MVP
 - Workbench route: `/app`
@@ -27,7 +28,7 @@ Approved actions:
 
 Not approved:
 
-- Domain purchase unless the approval explicitly names the domain and registrar.
+- DNS/domain provider changes unless explicitly approved.
 - Email capture.
 - Analytics.
 - Search Console.
@@ -101,7 +102,7 @@ Required approval details:
 1. Confirm final origin:
 
 ```text
-https://<approved-origin>
+https://fictionops.com
 ```
 
 2. Run local quality gate:
@@ -114,7 +115,7 @@ npm run verify:local-preview
 3. Run guarded public build:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://<approved-origin> npm run build:public
+NEXT_PUBLIC_SITE_URL=https://fictionops.com npm run build:public
 ```
 
 4. Deploy from the verified commit.
@@ -122,7 +123,7 @@ NEXT_PUBLIC_SITE_URL=https://<approved-origin> npm run build:public
 5. Verify public routes:
 
 ```bash
-npm run verify:routes -- --origin=https://<approved-origin>
+npm run verify:routes -- --origin=https://fictionops.com
 ```
 
 6. Manually check in browser:
@@ -180,7 +181,7 @@ Only run after explicit provider approval.
 npm run lint
 npm test
 npm run build
-npm run verify:routes -- --origin=https://<approved-origin>
+npm run verify:routes -- --origin=https://fictionops.com
 ```
 
 ## Analytics Procedure
@@ -216,7 +217,7 @@ Prerequisites:
 - `/sitemap.xml` returns approved public URLs.
 - `/robots.txt` references the approved public sitemap.
 - Canonical and OpenGraph URLs use the approved origin.
-- `npm run verify:routes -- --origin=https://<approved-origin>` passes.
+- `npm run verify:routes -- --origin=https://fictionops.com` passes.
 
 Do not submit before the public origin is stable.
 
@@ -254,14 +255,14 @@ Use one of these exact forms:
 
 ```text
 Approve Bundle A.
-Origin: https://...
+Origin: https://fictionops.com
 Deploy target: Vercel
 No email, no analytics, no posting.
 ```
 
 ```text
 Approve Bundle B.
-Origin: https://...
+Origin: https://fictionops.com
 Deploy target: Vercel
 Email provider: Buttondown or MailerLite
 Analytics: none

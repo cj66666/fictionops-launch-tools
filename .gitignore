@@ -15,6 +15,9 @@ npm-cache/
 .env
 .env.*
 !.env.example
+.env.local
+.env*.local
+.vercel/
 
 # Local QA artifacts
 output/
@@ -34,3 +37,4 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+

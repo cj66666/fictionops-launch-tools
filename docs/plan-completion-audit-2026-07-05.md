@@ -34,7 +34,7 @@ Human-gated items still not executed:
 - Public discussion posts.
 - Private author interview messages.
 - Discord joining or interaction.
-- Domain purchase.
+- Domain purchase. Completed by user for `fictionops.com`; no DNS change performed by Codex.
 
 ## Phase 1: MVP上线
 
@@ -85,8 +85,8 @@ Verification evidence:
 
 Human-gated items still not executed:
 
-- Public deployment.
-- Real domain connection.
+- Public deployment. Completed on Vercel at `https://fictionops-launch-tools.vercel.app`.
+- Real domain connection / DNS configuration.
 - Real email provider.
 - Analytics.
 - Search Console submission.

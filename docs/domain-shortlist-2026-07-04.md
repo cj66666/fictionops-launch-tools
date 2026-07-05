@@ -2,7 +2,8 @@
 
 Date: 2026-07-04
 
-Status: shortlist only. No domain purchase was made. DNS checks are not registrar availability checks; confirm at Cloudflare/Namecheap before buying.
+Status: user confirmed `fictionops.com` is already purchased. No DNS change or public
+deployment was made by Codex. DNS checks are not registrar availability checks.
 
 ## Naming Rule
 

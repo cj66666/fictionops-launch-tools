@@ -64,10 +64,10 @@ npm run verify:routes
 Build the local preview with `NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3102` before running this
 check so canonical, OpenGraph, Twitter image, RSS feed, sitemap, and robots URLs match the tested origin.
 
-For a public preview or final domain:
+For the selected final domain:
 
 ```bash
-npm run verify:routes -- --origin=https://your-public-origin.example
+npm run verify:routes -- --origin=https://fictionops.com
 ```
 
 ## Deployment Notes
@@ -78,7 +78,7 @@ social preview image URLs, `/feed.xml`, `/sitemap.xml`, and `/robots.txt` use th
 The public build command is guarded:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-public-origin.example npm run build:public
+NEXT_PUBLIC_SITE_URL=https://fictionops.com npm run build:public
 ```
 
 On Vercel, `vercel.json` uses `npm run build:public`, so the build will fail if the public
