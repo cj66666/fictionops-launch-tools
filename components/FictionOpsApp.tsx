@@ -13,6 +13,7 @@ import {
   Mail,
   ShieldCheck
 } from "lucide-react";
+import { trackEvent } from "@/lib/analyticsEvents";
 import { defaultLaunchInput, generateLaunchPlan } from "@/lib/launchPlan";
 import { CommunityRules } from "./CommunityRules";
 import { EmailSignupForm } from "./EmailSignupForm";
@@ -49,6 +50,7 @@ export function FictionOpsApp() {
 
   function jumpTo(id: string) {
     setActiveSection(id);
+    trackEvent("workbench_section_click", { section: id });
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 

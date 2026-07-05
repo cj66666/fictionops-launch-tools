@@ -94,3 +94,6 @@ export function analyticsCspSources(config = getAnalyticsConfig()) {
   };
 }
 
+export function analyticsEventsEnabled(config = getAnalyticsConfig()) {
+  return config.enabled && config.provider !== null;
+}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { analyticsCspSources, getAnalyticsConfig } from "@/lib/analytics";
+import { analyticsCspSources, analyticsEventsEnabled, getAnalyticsConfig } from "@/lib/analytics";
 
 describe("getAnalyticsConfig", () => {
   it("keeps analytics disabled without an approved provider", () => {
@@ -52,5 +52,11 @@ describe("getAnalyticsConfig", () => {
       )
     ).toEqual({ scriptSrc: "https://plausible.io", connectSrc: "https://plausible.io" });
   });
-});
 
+  it("enables custom events only when analytics is active", () => {
+    expect(analyticsEventsEnabled(getAnalyticsConfig({}))).toBe(false);
+    expect(
+      analyticsEventsEnabled(getAnalyticsConfig({ NEXT_PUBLIC_ANALYTICS_PROVIDER: "vercel" }))
+    ).toBe(true);
+  });
+});

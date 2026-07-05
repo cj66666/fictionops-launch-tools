@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, BookOpen, LogIn, Wrench } from "lucide-react";
 import { getEmailCaptureConfig } from "@/lib/emailCapture";
+import { TrackedLink } from "./TrackedLink";
 
 const navItems = [
   { href: "/tools", label: "Tools" },
@@ -62,15 +63,25 @@ export function SiteHeader() {
           Log in
         </Link>
         {emailCaptureConfig.enabled ? (
-          <Link className="button primary" href="/signup">
+          <TrackedLink
+            className="button primary"
+            eventName="cta_click"
+            eventProps={{ location: "header", target: "signup" }}
+            href="/signup"
+          >
             Sign up
             <ArrowRight size={15} />
-          </Link>
+          </TrackedLink>
         ) : (
-          <Link className="button primary" href="/app">
+          <TrackedLink
+            className="button primary"
+            eventName="cta_click"
+            eventProps={{ location: "header", target: "app" }}
+            href="/app"
+          >
             Open tools
             <Wrench size={15} />
-          </Link>
+          </TrackedLink>
         )}
       </div>
     </header>
@@ -106,10 +117,14 @@ export function SiteFooter() {
       </div>
       <div className="siteFooterBottom">
         <span>No Royal Road credentials. No auto-posting. No scraping required.</span>
-        <Link href="/blog">
+        <TrackedLink
+          eventName="cta_click"
+          eventProps={{ location: "footer", target: "blog" }}
+          href="/blog"
+        >
           <BookOpen size={14} />
           Read the guides
-        </Link>
+        </TrackedLink>
       </div>
     </footer>
   );

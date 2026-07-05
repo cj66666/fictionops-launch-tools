@@ -112,6 +112,17 @@ Executed:
 - Verification: public route verifier passed, homepage loads `/_vercel/insights/script.js`,
   privacy page names the approved `vercel` analytics provider.
 
+Conversion event tracking prepared:
+
+- Implementation record: `docs/conversion-event-tracking-2026-07-05.md`.
+- Added official `@vercel/analytics` package for Vercel custom events.
+- Events prepared: `cta_click`, `email_signup_submit`, `email_signup_invalid`, and
+  `workbench_section_click`.
+- Event properties avoid emails, Royal Road handles, story URLs, credentials, and private
+  account data.
+- Deployment status: implemented locally and verified; production deploy still requires
+  approval because pushing code to `master` triggers the public Vercel deployment.
+
 ## Email Capture Packet
 
 Recommended first choice: Buttondown.

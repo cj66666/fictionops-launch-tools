@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import { getAnalyticsConfig } from "@/lib/analytics";
 
 export function AnalyticsScripts() {
@@ -9,7 +10,7 @@ export function AnalyticsScripts() {
   }
 
   if (config.provider === "vercel") {
-    return <Script defer src={config.scriptSrc} strategy="afterInteractive" />;
+    return <Analytics />;
   }
 
   if (config.provider === "plausible") {
@@ -32,4 +33,3 @@ export function AnalyticsScripts() {
     />
   );
 }
-

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { PublicShell } from "@/components/PublicShell";
+import { TrackedLink } from "@/components/TrackedLink";
 import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { buildPageMetadata } from "@/lib/metadata";
 import { buildSoftwareApplicationJsonLd, buildWebSiteJsonLd } from "@/lib/structuredData";
@@ -110,20 +111,35 @@ export default function Home() {
               week turns into a messy spreadsheet.
             </p>
             <div className="marketingCtas">
-              <Link className="button primary large" href="/app">
+              <TrackedLink
+                className="button primary large"
+                eventName="cta_click"
+                eventProps={{ location: "home_hero", target: "app" }}
+                href="/app"
+              >
                 Open free tools
                 <ArrowRight size={17} />
-              </Link>
+              </TrackedLink>
               {emailCaptureConfig.enabled ? (
-                <Link className="button secondary large" href="/signup">
+                <TrackedLink
+                  className="button secondary large"
+                  eventName="cta_click"
+                  eventProps={{ location: "home_hero", target: "signup" }}
+                  href="/signup"
+                >
                   <Mail size={17} />
                   Get weekly checklist
-                </Link>
+                </TrackedLink>
               ) : (
-                <Link className="button secondary large" href="/blog">
+                <TrackedLink
+                  className="button secondary large"
+                  eventName="cta_click"
+                  eventProps={{ location: "home_hero", target: "blog" }}
+                  href="/blog"
+                >
                   <BookOpen size={17} />
                   Read launch guides
-                </Link>
+                </TrackedLink>
               )}
             </div>
             <div className="trustRow siteTrustRow" aria-label="Trust and safety promises">
@@ -250,22 +266,37 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <Link className="button secondary" href="/pricing">
+          <TrackedLink
+            className="button secondary"
+            eventName="cta_click"
+            eventProps={{ location: "pro_band", target: "pricing" }}
+            href="/pricing"
+          >
             See pricing hypothesis
             <ArrowRight size={15} />
-          </Link>
+          </TrackedLink>
         </section>
 
         <section className="finalCta">
           <h2>Open the workbench and build the first version of your launch plan.</h2>
           <div className="marketingCtas">
-            <Link className="button primary large" href="/app">
+            <TrackedLink
+              className="button primary large"
+              eventName="cta_click"
+              eventProps={{ location: "home_final", target: "app" }}
+              href="/app"
+            >
               Open free tools
               <ArrowRight size={17} />
-            </Link>
-            <Link className="button secondary large" href="/blog">
+            </TrackedLink>
+            <TrackedLink
+              className="button secondary large"
+              eventName="cta_click"
+              eventProps={{ location: "home_final", target: "blog" }}
+              href="/blog"
+            >
               Read the guides
-            </Link>
+            </TrackedLink>
           </div>
         </section>
       </main>

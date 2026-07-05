@@ -2,6 +2,7 @@
 
 import { type FormEvent, useState } from "react";
 import { Bell } from "lucide-react";
+import { trackEvent } from "@/lib/analyticsEvents";
 import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { isValidPreviewEmail, type SignupMessageTone } from "@/lib/signup";
 
@@ -27,6 +28,9 @@ export function EmailSignupForm({
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     if (!isValidPreviewEmail(email)) {
       event.preventDefault();
+      trackEvent("email_signup_invalid", {
+        mode: emailCaptureConfig.enabled ? "provider" : "preview"
+      });
       setSignupMessage({
         text: "Enter a valid email to preview the update signup.",
         tone: "error"
@@ -35,10 +39,18 @@ export function EmailSignupForm({
     }
 
     if (emailCaptureConfig.enabled) {
+      trackEvent("email_signup_submit", {
+        mode: "provider",
+        source: emailCaptureConfig.sourceValue
+      });
       return;
     }
 
     event.preventDefault();
+    trackEvent("email_signup_submit", {
+      mode: "preview",
+      source: emailCaptureConfig.sourceValue
+    });
     setSignupMessage({
       text: "Preview saved in this browser session. No email was sent or stored.",
       tone: "success"
