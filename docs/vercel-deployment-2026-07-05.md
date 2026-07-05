@@ -47,41 +47,39 @@ Added to the Vercel project:
 - `fictionops.com`
 - `www.fictionops.com`
 
-Vercel reports both domains are attached to the project and ownership is verified, but DNS
-configuration is not yet valid.
+Vercel reports both domains are attached to the project and configured correctly.
 
 Current DNS provider:
 
 - Cloudflare
 - nameservers: `rob.ns.cloudflare.com`, `olga.ns.cloudflare.com`
 
-Recommended Vercel DNS records:
+Final observed DNS:
 
 ```text
-Type: CNAME
-Name: @
-Value: d4998b8eafabf9c4.vercel-dns-017.com.
-Proxy: DNS only / disable proxy
+fictionops.com
+A 216.198.79.65
+A 64.29.17.65
 
-Type: CNAME
-Name: www
-Value: d4998b8eafabf9c4.vercel-dns-017.com.
-Proxy: DNS only / disable proxy
+www.fictionops.com
+CNAME d4998b8eafabf9c4.vercel-dns-017.com
 ```
 
-Alternative Vercel nameservers:
+Final HTTP checks:
 
 ```text
-ns1.vercel-dns.com
-ns2.vercel-dns.com
+https://fictionops.com 200 Vercel
+https://www.fictionops.com 200 Vercel
 ```
 
-Vercel also provided Cloudflare Domain Connect apply URLs for the apex and `www` domains.
-The user must review/apply DNS changes in Cloudflare before `https://fictionops.com` can resolve.
+Final route verification passed:
+
+```bash
+node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com
+```
 
 ## Not Done
 
-- No Cloudflare DNS change was performed by Codex.
 - No Search Console submission.
 - No analytics provider connected.
 - No email provider connected.

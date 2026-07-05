@@ -16,7 +16,7 @@ Concrete approval options and exact draft copy are in `docs/launch-approval-pack
 - Vercel public deployment performed.
 - No external posting, DM outreach, Discord interaction, analytics, email, payments, or account integrations performed.
 - Vercel deployment exists at `https://fictionops-launch-tools.vercel.app`.
-- `fictionops.com` and `www.fictionops.com` are attached to the Vercel project, but DNS is still invalid until Cloudflare records are updated.
+- `fictionops.com` and `www.fictionops.com` are live on Vercel.
 
 ## Ready Before Approval
 
@@ -57,13 +57,13 @@ Concrete approval options and exact draft copy are in `docs/launch-approval-pack
 - Public launch runbook exists at `docs/public-launch-runbook-2026-07-05.md`.
 - Feature acceptance packet exists at `docs/feature-acceptance-packet-2026-07-05.md`.
 - Vercel deployment record exists at `docs/vercel-deployment-2026-07-05.md`.
+- Final domain verification exists at `docs/domain-verification-final-2026-07-05.md`.
 
 ## Approval Needed
 
 Ask for explicit approval before any of these actions:
 
 - Pick and buy a domain.
-- Change DNS or domain provider settings.
 - Add analytics or email capture.
 - Activate the weekly checklist signup with a real email provider.
 - Submit to Google Search Console.
@@ -78,10 +78,10 @@ Ask for explicit approval before any of these actions:
 3. Optionally run `npm run verify:local-preview` for a local production preview preflight.
 4. Run `NEXT_PUBLIC_SITE_URL=https://fictionops.com npm run build:public`.
 5. Deployment is complete on Vercel.
-6. Update Cloudflare DNS records for `fictionops.com` and `www.fictionops.com`.
+6. Cloudflare DNS is complete.
 7. Confirm `/`, `/app`, `/tools`, `/features`, `/pricing`, `/blog`, `/login`, `/signup`, `/sitemap.xml`, `/robots.txt`, `/privacy`, `/terms`, and canonical/OG URLs on `https://fictionops.com`.
-8. Run `npm run verify:routes -- --origin=https://fictionops.com`.
-9. Re-check console errors on desktop and mobile.
+8. `node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com` has passed.
+9. Re-check console errors on desktop and mobile if making frontend changes.
 10. If email capture is approved, connect Buttondown/MailerLite and update privacy copy before launch.
 11. Submit sitemap after Search Console approval.
 12. Publish only the user-approved soft-launch copy.

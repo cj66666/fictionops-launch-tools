@@ -86,7 +86,7 @@ Verification evidence:
 Human-gated items still not executed:
 
 - Public deployment. Completed on Vercel at `https://fictionops-launch-tools.vercel.app`.
-- Real domain connection / DNS configuration.
+- Real domain connection / DNS configuration. Completed for `fictionops.com` and `www.fictionops.com`.
 - Real email provider.
 - Analytics.
 - Search Console submission.
