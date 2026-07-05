@@ -35,7 +35,14 @@ describe("seo pages", () => {
     expect(page?.ctaHref).toBe("/app#patreon");
     expect(page?.proofPoints?.length).toBeGreaterThanOrEqual(3);
     expect(page?.contentSections?.some((section) => section.title === "How to read the result")).toBe(true);
+    expect(page?.contentSections?.some((section) => section.title === "What it deliberately does not benchmark")).toBe(true);
     expect(page?.trustNotes).toContain("No Patreon login is required.");
+  });
+
+  it("does not route Patreon calculator visitors to a direct competitor", () => {
+    const page = findSeoPage("royal-road-patreon-calculator", "tool");
+
+    expect(page?.sources.some((source) => source.includes("chapterchronicles.com"))).toBe(false);
   });
 
   it("has structured content for every SEO page", () => {

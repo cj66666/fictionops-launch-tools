@@ -128,7 +128,10 @@ export const seoPages: SeoPage[] = [
     intent: "Author wants to estimate subscribers, revenue, and backlog.",
     cta: "Calculate Patreon runway",
     ctaHref: "/app#patreon",
-    sources: ["https://www.chapterchronicles.com/blog/royal-road-patreon-2025/"],
+    sources: [
+      "https://www.patreon.com/pricing",
+      "https://support.patreon.com/hc/en-us/articles/203913559-How-to-set-up-paid-tiers-and-benefits"
+    ],
     related: ["royal-road-stats", "royal-road-launch-plan"],
     proofPoints: [
       {
@@ -145,13 +148,18 @@ export const seoPages: SeoPage[] = [
         label: "Runway",
         value: "Backlog weeks",
         note: "See whether the advance-chapter buffer can survive the paid cadence."
+      },
+      {
+        label: "Positioning",
+        value: "Workflow first",
+        note: "Use this as an operations sanity check, not as a market benchmark database."
       }
     ],
     contentSections: [
       {
         title: "What this calculator answers",
         body:
-          "Use the calculator before announcing a Patreon or changing a paid chapter promise. It turns follower count, conversion assumptions, tier prices, and release cadence into a simple monthly runway view.",
+          "Use the calculator before announcing a Patreon or changing a paid chapter promise. It turns follower count, conversion assumptions, tier prices, and release cadence into a simple monthly runway view. The purpose is launch-ops readiness: can the author support the paid promise without breaking the public cadence?",
         bullets: [
           "How many patrons might a conservative, base, or optimistic case produce?",
           "What monthly revenue does the current tier mix imply?",
@@ -161,7 +169,7 @@ export const seoPages: SeoPage[] = [
       {
         title: "Default assumptions",
         body:
-          "The default workspace uses 850 followers, 1 percent / 3 percent / 6 percent conversion scenarios, and a simple three-tier mix. These are planning assumptions, not market promises. Change them to match the author's own audience and offer.",
+          "The default workspace uses 850 followers, 1 percent / 3 percent / 6 percent conversion scenarios, and a simple three-tier mix. These are editable planning assumptions, not market benchmarks or promises. Change them to match the author's own audience, offer, and risk tolerance.",
         bullets: [
           "Supporter tier: low-friction reader support.",
           "Advance chapters tier: the main promise most serial authors need to model.",
@@ -176,6 +184,17 @@ export const seoPages: SeoPage[] = [
           "Green means the current backlog promise is coherent at the entered cadence.",
           "Warnings mean the offer may be too early, too thin, or too fast.",
           "Run the calculator again after major follower milestones or cadence changes."
+        ]
+      },
+      {
+        title: "What it deliberately does not benchmark",
+        body:
+          "This calculator does not claim to know the typical conversion rate for every Royal Road genre, follower tier, or author platform. Data-heavy market reports can be useful background reading, but the first operational question is narrower: what happens to the author's chapter queue if their own conservative, base, or optimistic assumption comes true?",
+        bullets: [
+          "Use external data reports to challenge assumptions, not to replace the launch plan.",
+          "Keep the model editable so the author can test their own audience expectations.",
+          "Review backlog health before optimizing for headline revenue.",
+          "Treat Patreon setup as part of the launch workflow, not a detached revenue fantasy."
         ]
       }
     ],

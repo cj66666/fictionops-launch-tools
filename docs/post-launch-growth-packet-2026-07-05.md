@@ -276,6 +276,26 @@ After any approved post or public feedback:
 3. Prioritize changes that improve launch trust, tool clarity, or signup conversion.
 4. Do not build Pro/payment features until there is concrete waitlist or interview evidence.
 
+## Positioning Adjustment From Content Review
+
+Content review on 2026-07-05 identified Chapter Chronicles as a strong direct competitor in
+data-backed Royal Road monetization and analytics.
+
+Action taken locally:
+
+- Positioning record: `docs/positioning-response-chapter-chronicles-2026-07-05.md`.
+- Removed fake Royal Road story links from seeded swap examples.
+- Moved the Patreon calculator page away from competitor-linked benchmark framing and toward
+  editable launch-ops runway planning.
+- Kept the strategic wedge focused on launch workflow: checklist, swaps, community rules, stats
+  notes, and backlog readiness.
+
+Soft-launch message should now avoid "better data tool" framing and lead with:
+
+```text
+launch operations workflow
+```
+
 ## Post-Launch Audit Hardening
 
 Executed on 2026-07-05 after the deployment audit.
