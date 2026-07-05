@@ -178,13 +178,16 @@ export function FictionOpsApp() {
                     value={email}
                   />
                 </label>
-                {emailCaptureConfig.enabled ? (
-                  <input
-                    name={emailCaptureConfig.sourceFieldName}
-                    type="hidden"
-                    value={emailCaptureConfig.sourceValue}
-                  />
-                ) : null}
+                {emailCaptureConfig.enabled
+                  ? emailCaptureConfig.hiddenFields.map((field) => (
+                      <input
+                        key={field.name}
+                        name={field.name}
+                        type="hidden"
+                        value={field.value}
+                      />
+                    ))
+                  : null}
                 <button className="button full" type="submit">
                   <Bell size={15} />
                   {emailCaptureConfig.enabled ? "Get checklist" : "Preview signup"}

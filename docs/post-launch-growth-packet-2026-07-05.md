@@ -123,8 +123,25 @@ Rules:
   - `NEXT_PUBLIC_EMAIL_FIELD_NAME`
   - `NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME`
   - `NEXT_PUBLIC_EMAIL_SOURCE_VALUE`
+  - `NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS`
 - Privacy copy is already conditional and will show provider language when the form action is configured.
 - Verify empty, invalid, successful subscription, and provider-failure states after the provider is connected.
+
+Buttondown-ready settings:
+
+```text
+NEXT_PUBLIC_EMAIL_FORM_ACTION=https://buttondown.com/api/emails/embed-subscribe/<buttondown-username>
+NEXT_PUBLIC_EMAIL_FORM_METHOD=post
+NEXT_PUBLIC_EMAIL_FIELD_NAME=email
+NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME=metadata__source
+NEXT_PUBLIC_EMAIL_SOURCE_VALUE=fictionops-weekly-checklist
+NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS=embed=1
+```
+
+Buttondown's docs show the embedded HTML form posting to
+`https://buttondown.com/api/emails/embed-subscribe/YOUR-BUTTONDOWN-USERNAME`, using
+`name="email"` for the subscriber email and `name="embed"` with value `1` for embedded forms.
+Metadata fields use the `metadata__<key>` naming convention.
 
 ## First Community Research Post
 

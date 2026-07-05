@@ -5,14 +5,35 @@ export type EmailCaptureConfig = {
   emailFieldName: string;
   sourceFieldName: string;
   sourceValue: string;
+  hiddenFields: Array<{
+    name: string;
+    value: string;
+  }>;
 };
 
 const DEFAULT_EMAIL_FIELD = "email";
-const DEFAULT_SOURCE_FIELD = "source";
+const DEFAULT_SOURCE_FIELD = "metadata__source";
 const DEFAULT_SOURCE_VALUE = "fictionops-weekly-checklist";
 
 function clean(value: string | undefined) {
   return value?.trim() ?? "";
+}
+
+function parseHiddenFields(value: string | undefined) {
+  return clean(value)
+    .split(",")
+    .map((pair) => {
+      const [rawName, ...rawValueParts] = pair.split("=");
+      const name = clean(rawName);
+      const fieldValue = clean(rawValueParts.join("="));
+
+      if (!name || !fieldValue) {
+        return null;
+      }
+
+      return { name, value: fieldValue };
+    })
+    .filter((field): field is { name: string; value: string } => Boolean(field));
 }
 
 export function getEmailCaptureConfig(
@@ -24,6 +45,10 @@ export function getEmailCaptureConfig(
   const emailFieldName = clean(env.NEXT_PUBLIC_EMAIL_FIELD_NAME) || DEFAULT_EMAIL_FIELD;
   const sourceFieldName = clean(env.NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME) || DEFAULT_SOURCE_FIELD;
   const sourceValue = clean(env.NEXT_PUBLIC_EMAIL_SOURCE_VALUE) || DEFAULT_SOURCE_VALUE;
+  const hiddenFields = [
+    { name: sourceFieldName, value: sourceValue },
+    ...parseHiddenFields(env.NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS)
+  ];
 
   return {
     enabled: action.length > 0,
@@ -31,7 +56,7 @@ export function getEmailCaptureConfig(
     method,
     emailFieldName,
     sourceFieldName,
-    sourceValue
+    sourceValue,
+    hiddenFields
   };
 }
-

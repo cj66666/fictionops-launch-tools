@@ -168,11 +168,21 @@ Only run after explicit provider approval.
 NEXT_PUBLIC_EMAIL_FORM_ACTION=
 NEXT_PUBLIC_EMAIL_FORM_METHOD=post
 NEXT_PUBLIC_EMAIL_FIELD_NAME=email
-NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME=source
+NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME=metadata__source
 NEXT_PUBLIC_EMAIL_SOURCE_VALUE=fictionops-weekly-checklist
+NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS=embed=1
 ```
 
 The form remains local-only when `NEXT_PUBLIC_EMAIL_FORM_ACTION` is blank.
+
+For Buttondown, use:
+
+```text
+NEXT_PUBLIC_EMAIL_FORM_ACTION=https://buttondown.com/api/emails/embed-subscribe/<buttondown-username>
+```
+
+Keep `NEXT_PUBLIC_EMAIL_FIELD_NAME=email`. Keep `NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS=embed=1`
+for the embedded form flag. Use `metadata__source` for the internal source marker.
 
 5. Verify states:
 

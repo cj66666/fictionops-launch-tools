@@ -30,7 +30,8 @@ describe("getEmailCaptureConfig", () => {
       NEXT_PUBLIC_EMAIL_FORM_METHOD: "get",
       NEXT_PUBLIC_EMAIL_FIELD_NAME: "subscriber_email",
       NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME: "tag",
-      NEXT_PUBLIC_EMAIL_SOURCE_VALUE: "weekly-checklist"
+      NEXT_PUBLIC_EMAIL_SOURCE_VALUE: "weekly-checklist",
+      NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS: "embed=1,utm=launch"
     });
 
     expect(config).toEqual({
@@ -39,7 +40,12 @@ describe("getEmailCaptureConfig", () => {
       method: "get",
       emailFieldName: "subscriber_email",
       sourceFieldName: "tag",
-      sourceValue: "weekly-checklist"
+      sourceValue: "weekly-checklist",
+      hiddenFields: [
+        { name: "tag", value: "weekly-checklist" },
+        { name: "embed", value: "1" },
+        { name: "utm", value: "launch" }
+      ]
     });
   });
 
@@ -51,7 +57,10 @@ describe("getEmailCaptureConfig", () => {
     expect(config.enabled).toBe(true);
     expect(config.method).toBe("post");
     expect(config.emailFieldName).toBe("email");
-    expect(config.sourceFieldName).toBe("source");
+    expect(config.sourceFieldName).toBe("metadata__source");
     expect(config.sourceValue).toBe("fictionops-weekly-checklist");
+    expect(config.hiddenFields).toEqual([
+      { name: "metadata__source", value: "fictionops-weekly-checklist" }
+    ]);
   });
 });
