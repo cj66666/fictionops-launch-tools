@@ -78,6 +78,7 @@ Objective: execute the independent-site plan as fast as possible, without waitin
 - Feature acceptance packet added for local human review before launch approval.
 - Vercel deployment completed; `fictionops.com` and `www.fictionops.com` are live and route-verified.
 - Public browser QA completed for `https://fictionops.com` desktop homepage and mobile workbench.
+- Post-launch growth packet prepared for Search Console, analytics, email capture, and first no-link research post.
 
 ## Current Decision Gate
 
@@ -127,6 +128,7 @@ Next material gates require separate human confirmation:
 26. Vercel deployment
 27. Final domain verification
 28. Public browser QA
+29. Post-launch growth packet
 
 ## Latest QA Evidence
 
@@ -156,6 +158,7 @@ Next material gates require separate human confirmation:
 - `docs/vercel-deployment-2026-07-05.md`
 - `docs/domain-verification-final-2026-07-05.md`
 - `docs/public-browser-qa-2026-07-05.md`
+- `docs/post-launch-growth-packet-2026-07-05.md`
 - `.gitignore`
 - `scripts/require-public-site-url.mjs`
 - `scripts/verify-launch-readiness.mjs`

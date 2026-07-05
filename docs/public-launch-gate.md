@@ -58,6 +58,7 @@ Concrete approval options and exact draft copy are in `docs/launch-approval-pack
 - Feature acceptance packet exists at `docs/feature-acceptance-packet-2026-07-05.md`.
 - Vercel deployment record exists at `docs/vercel-deployment-2026-07-05.md`.
 - Final domain verification exists at `docs/domain-verification-final-2026-07-05.md`.
+- Post-launch growth packet exists at `docs/post-launch-growth-packet-2026-07-05.md`.
 
 ## Approval Needed
 

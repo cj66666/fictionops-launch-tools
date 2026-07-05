@@ -54,6 +54,7 @@ Implemented surfaces:
 - Vercel deployment completed at `https://fictionops-launch-tools.vercel.app`.
 - `fictionops.com` and `www.fictionops.com` are live on Vercel and route-verified.
 - Public browser QA completed for `https://fictionops.com` desktop homepage and mobile workbench.
+- Post-launch growth packet prepared for Search Console, analytics, email capture, and first no-link research post.
 
 ## Runtime
 
@@ -163,6 +164,7 @@ Evidence screenshots:
 - `docs/vercel-deployment-2026-07-05.md`
 - `docs/domain-verification-final-2026-07-05.md`
 - `docs/public-browser-qa-2026-07-05.md`
+- `docs/post-launch-growth-packet-2026-07-05.md`
 - `.gitignore`
 - `output/playwright/fictionops-home-desktop-2026-07-05.png`
 - `output/playwright/fictionops-app-desktop-2026-07-05.png`
