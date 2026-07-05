@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { absoluteUrl } from "@/lib/metadata";
+import { getSearchVerification } from "@/lib/searchVerification";
 import {
   siteDescription,
   siteFeedPath,
@@ -18,7 +19,7 @@ const socialImage = {
   alt: siteSocialImageAlt
 };
 
-const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const searchVerification = getSearchVerification();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -51,7 +52,10 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [socialImage.url]
   },
-  verification: googleSiteVerification ? { google: googleSiteVerification } : undefined
+  verification:
+    searchVerification.google || searchVerification.other
+      ? searchVerification
+      : undefined
 };
 
 export default function RootLayout({
