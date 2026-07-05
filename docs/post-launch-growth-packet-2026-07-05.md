@@ -162,6 +162,27 @@ Buttondown's docs show the embedded HTML form posting to
 `name="email"` for the subscriber email and `name="embed"` with value `1` for embedded forms.
 Metadata fields use the `metadata__<key>` naming convention.
 
+Executed:
+
+- Provider: Buttondown.
+- Buttondown username: `cj68681968`.
+- Buttondown newsletter page: `https://buttondown.com/cj68681968`.
+- Buttondown form action: `https://buttondown.com/api/emails/embed-subscribe/cj68681968`.
+- Buttondown public settings updated:
+  - Newsletter name: `FictionOps Weekly`
+  - Author name: `FictionOps`
+- Vercel env configured in Production and Preview:
+  - `NEXT_PUBLIC_EMAIL_FORM_ACTION`
+  - `NEXT_PUBLIC_EMAIL_FORM_METHOD`
+  - `NEXT_PUBLIC_EMAIL_FIELD_NAME`
+  - `NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME`
+  - `NEXT_PUBLIC_EMAIL_SOURCE_VALUE`
+  - `NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS`
+- Production deployment: `dpl_J9cDtMspxM35894sfyB8TJHv3ehh`.
+- Verification: public route verifier passed; `/signup` and `/app` contain the Buttondown
+  action, `metadata__source`, and `embed=1`; `/privacy` says the weekly checklist submits
+  to the approved email provider.
+
 ## First Community Research Post
 
 Recommended first channel: `r/royalroad`.

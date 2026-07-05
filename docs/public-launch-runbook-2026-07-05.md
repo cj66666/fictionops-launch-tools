@@ -184,6 +184,19 @@ NEXT_PUBLIC_EMAIL_FORM_ACTION=https://buttondown.com/api/emails/embed-subscribe/
 Keep `NEXT_PUBLIC_EMAIL_FIELD_NAME=email`. Keep `NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS=embed=1`
 for the embedded form flag. Use `metadata__source` for the internal source marker.
 
+Current production Buttondown connection:
+
+```text
+NEXT_PUBLIC_EMAIL_FORM_ACTION=https://buttondown.com/api/emails/embed-subscribe/cj68681968
+NEXT_PUBLIC_EMAIL_FORM_METHOD=post
+NEXT_PUBLIC_EMAIL_FIELD_NAME=email
+NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME=metadata__source
+NEXT_PUBLIC_EMAIL_SOURCE_VALUE=fictionops-weekly-checklist
+NEXT_PUBLIC_EMAIL_EXTRA_HIDDEN_FIELDS=embed=1
+```
+
+Production deployment: `dpl_J9cDtMspxM35894sfyB8TJHv3ehh`.
+
 5. Verify states:
 
 - empty email validation
