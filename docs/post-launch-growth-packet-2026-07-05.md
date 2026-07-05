@@ -1,10 +1,10 @@
 # Post-Launch Growth Packet - 2026-07-05
 
-This packet prepares the next growth actions after the public site launch.
+This packet prepares and records the next growth actions after the public site launch.
 
-No action in this file has been executed unless explicitly stated. Search Console,
-analytics, email capture, community posting, private outreach, payments, and account
-systems still require explicit approval.
+Search Console, analytics, email capture, community posting, private outreach, payments,
+and account systems require explicit approval before execution. Items below are marked
+when executed.
 
 ## Current Public State
 
@@ -20,7 +20,7 @@ systems still require explicit approval.
 ## Recommended Next Sequence
 
 1. Search Console submission.
-2. Analytics decision.
+2. Analytics decision. Completed with Vercel Analytics on 2026-07-05.
 3. Email capture decision.
 4. First no-link workflow research post.
 5. Feedback triage and first public iteration.
@@ -83,6 +83,15 @@ Rules:
   - `NEXT_PUBLIC_UMAMI_HOST_URL`
 - Privacy copy is already conditional and will show analytics-provider language when configured.
 - Re-run public route verification after enabling a provider.
+
+Executed:
+
+- Provider: Vercel Analytics.
+- Vercel env: `NEXT_PUBLIC_ANALYTICS_PROVIDER=vercel` in Production and Preview.
+- Production deployment: `dpl_AGQ3bFBTqMRuPiZr1XiDwgWpv6kx`.
+- Alias: `https://fictionops.com`.
+- Verification: public route verifier passed, homepage loads `/_vercel/insights/script.js`,
+  privacy page names the approved `vercel` analytics provider.
 
 ## Email Capture Packet
 
@@ -165,8 +174,6 @@ After any approved post or public feedback:
 
 ## Not Approved Yet
 
-- Search Console submission.
-- Analytics.
 - Email provider connection.
 - Reddit/Royal Road/Discord posting.
 - Private outreach.
