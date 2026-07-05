@@ -50,6 +50,7 @@ Concrete approval options and exact draft copy are in `docs/launch-approval-pack
 - Feedback kit page exists for local-only reviewer questions.
 - Local Git repository has been initialized and local-only artifacts are ignored.
 - Plan completion audit exists at `docs/plan-completion-audit-2026-07-05.md`.
+- Public launch runbook exists at `docs/public-launch-runbook-2026-07-05.md`.
 
 ## Approval Needed
 

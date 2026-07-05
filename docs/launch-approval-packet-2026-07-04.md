@@ -4,6 +4,10 @@ Date: 2026-07-04
 
 Purpose: make the next human approvals concrete. Nothing in this packet has been executed publicly.
 
+Operational runbook after approval:
+
+`docs/public-launch-runbook-2026-07-05.md`
+
 ## Current Local State
 
 - Local production preview: `http://127.0.0.1:3102`

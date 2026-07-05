@@ -49,6 +49,7 @@ Implemented surfaces:
 - Local Git repository initialized; `.gitignore` added for dependencies, build output, caches, env files, QA artifacts, and authorization screenshots.
 - Initial local Git baseline commit created: `4d2f5a9` (`Initial local FictionOps prototype`).
 - Plan completion audit added to distinguish completed local execution from human-gated public actions.
+- Public launch runbook added for approved deployment, capture, analytics, Search Console, posting, and rollback.
 
 ## Runtime
 
@@ -149,6 +150,7 @@ Evidence screenshots:
 - `docs/claude-frontend-expansion-review-2026-07-05.md`
 - `docs/browser-qa-hardening-2026-07-05.md`
 - `docs/plan-completion-audit-2026-07-05.md`
+- `docs/public-launch-runbook-2026-07-05.md`
 - `.gitignore`
 - `output/playwright/fictionops-home-desktop-2026-07-05.png`
 - `output/playwright/fictionops-app-desktop-2026-07-05.png`
