@@ -47,6 +47,7 @@ Implemented surfaces:
 - Launch approval packet prepared for domain/deploy/email/analytics/Search Console/soft-launch decisions.
 - Competitor audit conversion improvements: stronger first-screen CTA, trust badges, local-only weekly checklist signup preview, sample outputs, and future Pro teaser.
 - Local Git repository initialized; `.gitignore` added for dependencies, build output, caches, env files, QA artifacts, and authorization screenshots.
+- Initial local Git baseline commit created: `4d2f5a9` (`Initial local FictionOps prototype`).
 - Plan completion audit added to distinguish completed local execution from human-gated public actions.
 
 ## Runtime

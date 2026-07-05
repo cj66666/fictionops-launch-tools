@@ -73,6 +73,7 @@ Evidence:
   - `/terms`
 - Git repository initialized locally on 2026-07-05.
 - `.gitignore` added for dependencies, build output, caches, local env files, QA artifacts, and local authorization screenshots.
+- Initial local Git baseline commit created: `4d2f5a9` (`Initial local FictionOps prototype`).
 
 Verification evidence:
 

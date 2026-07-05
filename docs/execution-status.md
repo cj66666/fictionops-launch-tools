@@ -71,6 +71,7 @@ Objective: execute the independent-site plan as fast as possible, without waitin
 - Claude Code review of the frontend expansion completed; material findings fixed and reverified.
 - Browser QA refreshed after hardening with Playwright desktop/mobile screenshots for `/`, `/app`, and the branded 404 route.
 - Local Git repository initialized and `.gitignore` added for dependencies, build output, caches, env files, QA artifacts, and authorization screenshots.
+- Initial local Git baseline commit created: `4d2f5a9` (`Initial local FictionOps prototype`).
 - Full plan completion audit added, separating completed local execution from human-gated public actions.
 
 ## Current Decision Gate
