@@ -311,6 +311,20 @@ Soft-launch message should now avoid "better data tool" framing and lead with:
 launch operations workflow
 ```
 
+## Product Logic Hardening
+
+Product-level review findings were implemented locally on 2026-07-05.
+
+- Record: `docs/product-logic-hardening-2026-07-05.md`.
+- CSV export now neutralizes formula-like cells before spreadsheet export.
+- Patreon calculator now guards non-finite input values and explains conservative conversion-rate
+  assumptions.
+- Swap Tracker CSV import now confirms before replacing existing local records.
+- Swap Tracker localStorage writes are caught and surfaced to the user if browser storage fails.
+- Verification: `npm run lint`, `npm test` (17 files / 59 tests), `npm run build`, and route
+  verifier passed.
+- Deployment status: local only; production deployment still requires explicit approval.
+
 ## Post-Launch Audit Hardening
 
 Executed on 2026-07-05 after the deployment audit.

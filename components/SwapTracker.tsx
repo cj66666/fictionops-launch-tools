@@ -62,7 +62,11 @@ export function SwapTracker() {
 
   useEffect(() => {
     if (!isHydrated) return;
-    window.localStorage.setItem(storageKey, JSON.stringify(records));
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(records));
+    } catch {
+      setImportMessage("This change could not be saved in this browser. Export CSV before leaving.");
+    }
   }, [isHydrated, records]);
 
   function addRecord() {
@@ -93,6 +97,17 @@ export function SwapTracker() {
     reader.onload = () => {
       try {
         const importedRecords = fromCsv(String(reader.result ?? ""));
+        const shouldReplace =
+          records.length === 0 ||
+          window.confirm(
+            `Importing this CSV will replace your current ${records.length} swap records. Continue?`
+          );
+
+        if (!shouldReplace) {
+          setImportMessage("Import canceled. Existing swaps were kept.");
+          return;
+        }
+
         setRecords(importedRecords);
         setImportMessage(`Imported ${importedRecords.length} swaps. Saved in this browser.`);
       } catch (error) {

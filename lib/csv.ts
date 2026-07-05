@@ -126,6 +126,15 @@ function parseCsvRows(csv: string) {
 }
 
 function escapeCsvCell(value: string) {
-  if (!/[",\n\r]/.test(value)) return value;
-  return `"${value.replace(/"/g, '""')}"`;
+  const safeValue = neutralizeCsvFormula(value);
+  if (!/[",\n\r]/.test(safeValue)) return safeValue;
+  return `"${safeValue.replace(/"/g, '""')}"`;
+}
+
+function neutralizeCsvFormula(value: string) {
+  if (/^[\t\r]|^\s*[=+\-@]/.test(value)) {
+    return `'${value}`;
+  }
+
+  return value;
 }

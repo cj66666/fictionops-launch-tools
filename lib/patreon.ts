@@ -18,43 +18,53 @@ export const defaultPatreonInput: PatreonInput = {
 };
 
 export function calculatePatreon(input: PatreonInput): PatreonOutput {
+  const followers = nonNegativeFinite(input.followers);
+  const advanceChapters = nonNegativeFinite(input.advanceChapters);
+  const publicChaptersPerWeek = nonNegativeFinite(input.publicChaptersPerWeek);
+  const paidChaptersPerWeek = nonNegativeFinite(input.paidChaptersPerWeek);
+  const conversionRates = {
+    conservative: nonNegativeFinite(input.conversionRates.conservative),
+    base: nonNegativeFinite(input.conversionRates.base),
+    optimistic: nonNegativeFinite(input.conversionRates.optimistic)
+  };
+
   const weightedAverageTier = input.tiers.reduce(
-    (sum, tier) => sum + Math.max(0, tier.price) * Math.max(0, tier.share),
+    (sum, tier) => sum + nonNegativeFinite(tier.price) * nonNegativeFinite(tier.share),
     0
   );
 
   const scenarios: PatreonScenario[] = [
     {
       label: "Conservative",
-      conversionRate: input.conversionRates.conservative,
-      patrons: estimatePatrons(input.followers, input.conversionRates.conservative),
+      conversionRate: conversionRates.conservative,
+      patrons: estimatePatrons(followers, conversionRates.conservative),
       monthlyRevenue:
-        estimatePatrons(input.followers, input.conversionRates.conservative) * weightedAverageTier
+        estimatePatrons(followers, conversionRates.conservative) * weightedAverageTier
     },
     {
       label: "Base",
-      conversionRate: input.conversionRates.base,
-      patrons: estimatePatrons(input.followers, input.conversionRates.base),
-      monthlyRevenue: estimatePatrons(input.followers, input.conversionRates.base) * weightedAverageTier
+      conversionRate: conversionRates.base,
+      patrons: estimatePatrons(followers, conversionRates.base),
+      monthlyRevenue: estimatePatrons(followers, conversionRates.base) * weightedAverageTier
     },
     {
       label: "Optimistic",
-      conversionRate: input.conversionRates.optimistic,
-      patrons: estimatePatrons(input.followers, input.conversionRates.optimistic),
+      conversionRate: conversionRates.optimistic,
+      patrons: estimatePatrons(followers, conversionRates.optimistic),
       monthlyRevenue:
-        estimatePatrons(input.followers, input.conversionRates.optimistic) * weightedAverageTier
+        estimatePatrons(followers, conversionRates.optimistic) * weightedAverageTier
     }
   ];
 
-  const weeklyBurn = Math.max(0, input.paidChaptersPerWeek - input.publicChaptersPerWeek);
-  const backlogRunwayWeeks = weeklyBurn === 0 ? Infinity : input.advanceChapters / weeklyBurn;
+  const weeklyBurn = Math.max(0, paidChaptersPerWeek - publicChaptersPerWeek);
+  const backlogRunwayWeeks = weeklyBurn === 0 ? Infinity : advanceChapters / weeklyBurn;
   const warnings: string[] = [];
 
-  if (input.followers < 500) {
+  if (followers < 500) {
     warnings.push("Follower base is still early. Use Patreon planning cautiously.");
   }
 
-  if (input.advanceChapters < 5) {
+  if (advanceChapters < 5) {
     warnings.push("Advance chapter buffer is thin for a paid promise.");
   }
 
@@ -75,5 +85,9 @@ export function calculatePatreon(input: PatreonInput): PatreonOutput {
 }
 
 function estimatePatrons(followers: number, rate: number) {
-  return Math.max(0, Math.round(Math.max(0, followers) * Math.max(0, rate)));
+  return Math.max(0, Math.round(nonNegativeFinite(followers) * nonNegativeFinite(rate)));
+}
+
+function nonNegativeFinite(value: number) {
+  return Number.isFinite(value) ? Math.max(0, value) : 0;
 }

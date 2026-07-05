@@ -17,7 +17,7 @@ export function PatreonCalculator() {
   function updateRate(key: keyof PatreonInput["conversionRates"], value: number) {
     setInput((current) => ({
       ...current,
-      conversionRates: { ...current.conversionRates, [key]: value }
+      conversionRates: { ...current.conversionRates, [key]: sanitizeNumber(value) }
     }));
   }
 
@@ -39,7 +39,7 @@ export function PatreonCalculator() {
               type="number"
               min={0}
               value={input.followers}
-              onChange={(event) => update("followers", Number(event.target.value))}
+              onChange={(event) => update("followers", sanitizeNumber(Number(event.target.value)))}
             />
           </Field>
           <Field label="Advance chapters">
@@ -47,7 +47,7 @@ export function PatreonCalculator() {
               type="number"
               min={0}
               value={input.advanceChapters}
-              onChange={(event) => update("advanceChapters", Number(event.target.value))}
+              onChange={(event) => update("advanceChapters", sanitizeNumber(Number(event.target.value)))}
             />
           </Field>
           <Field label="Public chapters / week">
@@ -55,7 +55,7 @@ export function PatreonCalculator() {
               type="number"
               min={0}
               value={input.publicChaptersPerWeek}
-              onChange={(event) => update("publicChaptersPerWeek", Number(event.target.value))}
+              onChange={(event) => update("publicChaptersPerWeek", sanitizeNumber(Number(event.target.value)))}
             />
           </Field>
           <Field label="Paid chapters / week">
@@ -63,7 +63,7 @@ export function PatreonCalculator() {
               type="number"
               min={0}
               value={input.paidChaptersPerWeek}
-              onChange={(event) => update("paidChaptersPerWeek", Number(event.target.value))}
+              onChange={(event) => update("paidChaptersPerWeek", sanitizeNumber(Number(event.target.value)))}
             />
           </Field>
           <Field label="Base conversion">
@@ -114,6 +114,15 @@ export function PatreonCalculator() {
           </div>
         </div>
       </div>
+      <p className="inlineNote">
+        Assumption note: the default 1% / 3% / 6% conversion rates are conservative
+        full-follower planning inputs, not a benchmark for already-monetized survivor samples.
+        Raise or lower them to match your own audience before treating the runway as actionable.
+      </p>
     </Panel>
   );
+}
+
+function sanitizeNumber(value: number) {
+  return Number.isFinite(value) ? Math.max(0, value) : 0;
 }

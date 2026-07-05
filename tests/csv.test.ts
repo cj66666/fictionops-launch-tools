@@ -62,4 +62,29 @@ describe("toCsv", () => {
   it("rejects CSV with unexpected headers", () => {
     expect(() => fromCsv("Name,Story\nA,B")).toThrow(/headers/i);
   });
+
+  it("neutralizes formula-like CSV cells before spreadsheet export", () => {
+    const record: SwapRecord = {
+      id: "1",
+      author: '=HYPERLINK("http://evil.com","x")',
+      story: "+SUM(1,2)",
+      royalRoadUrl: "-10",
+      genreFit: "@malicious",
+      followerTier: "\t=cmd",
+      contactChannel: "Discord",
+      agreedDate: "2026-07-20",
+      insertionLocation: "Chapter 5",
+      snippet: " normal text",
+      status: "agreed",
+      notes: "Safe"
+    };
+
+    const csv = toCsv([record]);
+
+    expect(csv).toContain('"\'=HYPERLINK(""http://evil.com"",""x"")"');
+    expect(csv).toContain("\"'+SUM(1,2)\"");
+    expect(csv).toContain("'-10");
+    expect(csv).toContain("'@malicious");
+    expect(csv).toContain("'\t=cmd");
+  });
 });

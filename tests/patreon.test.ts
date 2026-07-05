@@ -47,4 +47,25 @@ describe("calculatePatreon", () => {
 
     expect(result.warnings.some((warning) => warning.includes("Backlog runway"))).toBe(true);
   });
+
+  it("treats NaN inputs as zero instead of leaking NaN into output", () => {
+    const result = calculatePatreon({
+      ...defaultPatreonInput,
+      followers: Number.NaN,
+      advanceChapters: Number.NaN,
+      publicChaptersPerWeek: Number.NaN,
+      paidChaptersPerWeek: 5,
+      conversionRates: {
+        conservative: Number.NaN,
+        base: Number.NaN,
+        optimistic: Number.NaN
+      }
+    });
+
+    expect(result.scenarios.every((scenario) => scenario.patrons === 0)).toBe(true);
+    expect(result.scenarios.every((scenario) => scenario.monthlyRevenue === 0)).toBe(true);
+    expect(result.backlogRunwayWeeks).toBe(0);
+    expect(result.warnings).toContain("Follower base is still early. Use Patreon planning cautiously.");
+    expect(result.warnings).toContain("Advance chapter buffer is thin for a paid promise.");
+  });
 });
