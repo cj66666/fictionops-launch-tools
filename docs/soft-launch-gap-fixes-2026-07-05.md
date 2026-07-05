@@ -47,18 +47,23 @@ Latest test count:
 
 ## Deployment
 
-Production deployment completed:
+Production deployments completed:
 
 - Deployment ID: `dpl_28Xp1nLvhFAd4xw7dQ7yeDQKgGvx`
 - Vercel URL: `https://fictionops-launch-tools-49kw6hnw4-jingchens-projects-753863a8.vercel.app`
 - Alias: `https://fictionops.com`
+- Follow-up deployment ID: `dpl_F5QcNc2qZ9pGuKdpa9fqzd3yDkq7`
+- Follow-up Vercel URL: `https://fictionops-launch-tools-p7p68g03g-jingchens-projects-753863a8.vercel.app`
+- Follow-up alias: `https://fictionops.com`
 
 Public spot checks:
 
 - `https://fictionops.com/guides/royal-road-rising-stars` returned 200.
 - `https://fictionops.com/guides/royal-road-stats` returned 200.
 - `https://fictionops.com/guides/royal-road-vs-scribblehub` returned 200.
+- `https://fictionops.com/guides/web-novel-launch-plan` returned 200 and contains the expanded launch-plan sections.
 - `https://fictionops.com/app` returned 200.
+- `node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com` passed after the follow-up deployment.
 
 Public screenshot:
 
