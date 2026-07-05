@@ -1357,6 +1357,15 @@ textarea:focus {
   margin: 8px 0 0;
 }
 
+.signupStandalone {
+  margin-top: 22px;
+  max-width: 420px;
+}
+
+.signupStandalone .signupForm {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .sampleOutputs {
   margin-top: 12px;
   padding-top: 12px;

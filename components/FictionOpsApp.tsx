@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { type FormEvent, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   BarChart3,
   Bell,
@@ -13,10 +13,9 @@ import {
   Mail,
   ShieldCheck
 } from "lucide-react";
-import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { defaultLaunchInput, generateLaunchPlan } from "@/lib/launchPlan";
-import { isValidPreviewEmail, type SignupMessageTone } from "@/lib/signup";
 import { CommunityRules } from "./CommunityRules";
+import { EmailSignupForm } from "./EmailSignupForm";
 import { LaunchPlanner } from "./LaunchPlanner";
 import { PatreonCalculator } from "./PatreonCalculator";
 import { SwapTracker } from "./SwapTracker";
@@ -43,42 +42,14 @@ const proItems = [
   "Benchmark history"
 ];
 
-const emailCaptureConfig = getEmailCaptureConfig();
-
 export function FictionOpsApp() {
   const [launchInput, setLaunchInput] = useState(defaultLaunchInput);
   const launchPlan = useMemo(() => generateLaunchPlan(launchInput), [launchInput]);
   const [activeSection, setActiveSection] = useState("launch");
-  const [email, setEmail] = useState("");
-  const [signupMessage, setSignupMessage] = useState<{
-    text: string;
-    tone: SignupMessageTone;
-  } | null>(null);
 
   function jumpTo(id: string) {
     setActiveSection(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  function previewSignup(event: FormEvent<HTMLFormElement>) {
-    if (!isValidPreviewEmail(email)) {
-      event.preventDefault();
-      setSignupMessage({
-        text: "Enter a valid email to preview the update signup.",
-        tone: "error"
-      });
-      return;
-    }
-
-    if (emailCaptureConfig.enabled) {
-      return;
-    }
-
-    event.preventDefault();
-    setSignupMessage({
-      text: "Preview saved in this browser session. No email was sent or stored.",
-      tone: "success"
-    });
   }
 
   return (
@@ -158,49 +129,7 @@ export function FictionOpsApp() {
                   <p>Waitlist preview for benchmark updates, reminders, and release checklists.</p>
                 </div>
               </div>
-              <form
-                action={emailCaptureConfig.enabled ? emailCaptureConfig.action : undefined}
-                className="signupForm"
-                method={emailCaptureConfig.enabled ? emailCaptureConfig.method : undefined}
-                onSubmit={previewSignup}
-              >
-                <label className="field">
-                  <span>Email</span>
-                  <input
-                    autoComplete="email"
-                    name={emailCaptureConfig.emailFieldName}
-                    onChange={(event) => {
-                      setEmail(event.target.value);
-                      setSignupMessage(null);
-                    }}
-                    placeholder="author@example.com"
-                    type="email"
-                    value={email}
-                  />
-                </label>
-                {emailCaptureConfig.enabled
-                  ? emailCaptureConfig.hiddenFields.map((field) => (
-                      <input
-                        key={field.name}
-                        name={field.name}
-                        type="hidden"
-                        value={field.value}
-                      />
-                    ))
-                  : null}
-                <button className="button full" type="submit">
-                  <Bell size={15} />
-                  {emailCaptureConfig.enabled ? "Get checklist" : "Preview signup"}
-                </button>
-              </form>
-              {signupMessage ? (
-                <p className={`signupMessage ${signupMessage.tone}`}>{signupMessage.text}</p>
-              ) : null}
-              <p className="signupFinePrint">
-                {emailCaptureConfig.enabled
-                  ? "This form submits your email to the approved checklist provider. No platform credentials are requested."
-                  : "Preview mode only. No email is sent, stored, or subscribed."}
-              </p>
+              <EmailSignupForm />
               <div className="sampleOutputs">
                 <strong>Sample outputs</strong>
                 <span>Launch checklist</span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Mail, ShieldCheck } from "lucide-react";
+import { EmailSignupForm } from "@/components/EmailSignupForm";
 import { PublicShell } from "@/components/PublicShell";
 import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -49,9 +50,15 @@ export default function SignupPage() {
               {emailCaptureConfig.enabled ? "No platform credentials" : "No provider is connected"}
             </span>
           </div>
+          <div className="signupStandalone">
+            <EmailSignupForm
+              enabledLabel="Join checklist"
+              previewLabel="Preview local signup"
+            />
+          </div>
           <div className="marketingCtas">
-            <Link className="button primary large" href="/app#updates">
-              Preview local signup
+            <Link className="button secondary large" href="/app#updates">
+              Open workbench signup
               <ArrowRight size={17} />
             </Link>
             <Link className="button secondary large" href="/pricing">
