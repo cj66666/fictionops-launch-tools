@@ -230,6 +230,13 @@ Executed:
 - Feishu platform process record: `recvotMAThyqQr`.
 - Follow-up decision: do not repost to `r/royalroad` without separate approval.
 
+Next prepared route:
+
+- `docs/royal-road-forum-research-post-2026-07-05.md`
+- Recommended platform: Royal Road Forums.
+- Recommended category: `Writing: Tips & Discussions`.
+- Status: prepared only; not posted.
+
 ## First Feedback Loop
 
 After any approved post or public feedback:
