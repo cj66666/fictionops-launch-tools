@@ -201,23 +201,47 @@ export const seoPages: SeoPage[] = [
     related: ["royal-road-genre-rising-stars", "royal-road-launch-plan"],
     contentSections: [
       {
-        title: "What to watch",
+        title: "What Rising Stars readiness really means",
         body:
-          "Track the things an author controls before launch: cadence, chapter buffer, story packaging, early reader response, and whether community posts are rule-safe. External ranking movement should be treated as feedback, not as a promise.",
+          "Rising Stars readiness is not a promise that a story will appear on a ranking page. It is a way to check whether the launch has the basics in place before early readers arrive: a clear genre promise, enough chapters to show momentum, a cadence the author can keep, and a simple way to record what happened during the first few weeks. The useful question is not whether an author can force an outcome. The useful question is whether the story is prepared enough that real reader response can be measured without chaos.",
         bullets: [
-          "Prepare the first-week chapter queue before launch.",
-          "Keep a baseline of followers, views, favorites, and comments.",
-          "Review genre and tag fit without stuffing unrelated tags."
+          "Prepare a first-week chapter queue before launch so the opening does not depend on last-minute writing.",
+          "Record a baseline of followers, views, favorites, ratings context, and comments before any promotion push.",
+          "Review genre and tag fit without stuffing unrelated tags that will disappoint readers later.",
+          "Write down which events happened on which day: chapter drops, shoutouts, ads, forum posts, and Reddit discussions."
+        ]
+      },
+      {
+        title: "A safer first-month watch loop",
+        body:
+          "A practical watch loop is weekly, not minute-by-minute. On launch day, record the starting numbers and the exact packaging used: cover, title, blurb, categories, tags, and first chapter version. During the first week, note every release and every external mention. After each week, compare the change in numbers against the actual launch activity. This keeps the author from rewriting everything after one noisy day and makes later decisions easier to explain.",
+        bullets: [
+          "Day 0: capture packaging and starting stats before any launch activity.",
+          "Days 1-7: track releases, comments, shoutouts, follower movement, and visible reader objections.",
+          "Days 8-14: inspect the opening hook and blurb if views rise but follows lag.",
+          "Days 15-30: review whether cadence and community work are sustainable instead of chasing one ranking surface."
+        ]
+      },
+      {
+        title: "Packaging checks before launch",
+        body:
+          "Packaging is part of launch operations. If the cover suggests one subgenre, the blurb promises another, and the first chapter opens with a different tone, early stats become hard to interpret. Before publishing, compare the story promise across the cover, title, blurb, tags, first chapter, and author note. The goal is not to make everything generic. The goal is to make the right reader understand what they are being offered before they click.",
+        bullets: [
+          "Read the blurb beside the first chapter and mark every promise the chapter does or does not support.",
+          "Check whether the first visible tags match the audience the launch is trying to reach.",
+          "Keep a screenshot or note of the launch version so later packaging changes have context.",
+          "Do not change cover, blurb, tags, and cadence all at once unless the launch is clearly broken."
         ]
       },
       {
         title: "What not to promise",
         body:
-          "Do not market a launch as guaranteed to reach any ranking surface. A safer framing is to say the launch is prepared, measurable, and community-safe.",
+          "Do not market a launch as guaranteed to reach any ranking surface. A safer framing is to say the launch is prepared, measurable, and community-safe. That matters because Royal Road and adjacent communities are sensitive to anything that looks like manipulation: review trades, engagement farming, irrelevant promotion, or AI-generated spam. A tool can help the author organize launch work, but it should not imply platform endorsement or special access to an algorithm.",
         bullets: [
           "Avoid guaranteed ranking language.",
-          "Avoid engagement farming or review trades.",
-          "Use source-linked guidance and update it when platform rules change."
+          "Avoid engagement farming, review trades, or pressure campaigns.",
+          "Use source-linked guidance and update it when platform rules change.",
+          "Treat external trackers and public lists as observation tools, not as instructions to game the platform."
         ]
       }
     ]
@@ -273,23 +297,47 @@ export const seoPages: SeoPage[] = [
     related: ["royal-road-views-vs-followers", "royal-road-patreon-calculator"],
     contentSections: [
       {
+        title: "What each metric can and cannot tell you",
+        body:
+          "Royal Road stats are useful when they are read together. Views can show exposure or reading activity, but they do not always mean a reader wants future chapters. Followers are a stronger signal of continued interest, but they lag behind discovery. Favorites, comments, ratings, and reviews each carry different biases. A small story with engaged comments may be healthier than a larger spike that disappears after one shoutout. The author should avoid turning any single metric into a verdict.",
+        bullets: [
+          "Views answer whether readers are reaching chapters, not whether they are committed.",
+          "Followers answer whether some readers want future updates.",
+          "Favorites and comments can show attachment, but they depend heavily on genre and reader habits.",
+          "Ratings and reviews need context; one early reaction should not drive the whole launch plan."
+        ]
+      },
+      {
         title: "Weekly review loop",
         body:
-          "A weekly review is more useful than refreshing stats every few minutes. Record the same numbers on the same day each week, then compare the change against what happened in the story and promotion plan.",
+          "A weekly review is more useful than refreshing stats every few minutes. Record the same numbers on the same day each week, then compare the change against what happened in the story and promotion plan. The review should include both stats and events. Without event notes, a spike after a shoutout can be mistaken for packaging improvement, and a quiet week after a missed update can be mistaken for reader rejection.",
         bullets: [
-          "Record followers, views, favorites, comments, and rating context.",
-          "Note chapter releases, shoutouts, ads, and community posts.",
+          "Record followers, views, favorites, comments, review count, and rating context.",
+          "Note chapter releases, shoutouts, ads, and community posts beside the numbers.",
+          "Separate story changes from promotion events so the cause is easier to inspect.",
           "Look for trend direction rather than one noisy day."
+        ]
+      },
+      {
+        title: "A simple benchmark table",
+        body:
+          "The first benchmark does not need automation. A manual table is enough: week number, total chapters, total words, followers, total views, favorites, comments, review count, major launch events, and one short note. The important part is consistency. Record the same fields every week and keep the definitions stable. If the author later uses a more advanced tracker, this early table becomes the baseline.",
+        bullets: [
+          "Week 0: capture the launch state before public promotion.",
+          "Week 1: mark first-week chapter drops and any shoutouts.",
+          "Week 2: inspect whether readers who arrived in week 1 continued following.",
+          "Week 4: decide whether packaging, cadence, or community channel needs one focused change."
         ]
       },
       {
         title: "Do not overreact",
         body:
-          "Early numbers are noisy. Use stats to decide what to inspect next: blurb, cover, opening hook, cadence, audience fit, or community channel. Avoid changing everything at once.",
+          "Early numbers are noisy. Use stats to decide what to inspect next: blurb, cover, opening hook, cadence, audience fit, or community channel. Avoid changing everything at once. If views are present but followers are weak, inspect promise-to-opening fit. If followers grow but comments stay quiet, inspect whether the author notes invite useful discussion. If stats drop after cadence slips, fix the publishing system before rewriting the story's positioning.",
         bullets: [
           "Change one major variable at a time when practical.",
           "Keep notes beside the numbers.",
-          "Use the Patreon calculator only after the audience signal is stable enough to model."
+          "Use the Patreon calculator only after the audience signal is stable enough to model.",
+          "Treat stats as triage signals, not as a substitute for reader judgment."
         ]
       }
     ]
@@ -345,23 +393,47 @@ export const seoPages: SeoPage[] = [
     related: ["web-novel-launch-plan", "royal-road-launch-plan"],
     contentSections: [
       {
-        title: "Choose by workflow, not vibes",
+        title: "Choose by launch workflow, not vibes",
         body:
-          "A platform choice should match genre fit, update cadence, community norms, and how much operational overhead the author can handle. Treat the first platform as a launch system, not a permanent identity.",
+          "A platform choice should match genre fit, update cadence, community norms, and how much operational overhead the author can handle. Treat the first platform as a launch system, not a permanent identity. Many authors ask whether one site is simply better than the other, but the more useful question is where the specific story can find the right first readers and where the author can maintain the work. A launch that fits the author's weekly rhythm is more valuable than a theoretical audience the author cannot serve consistently.",
         bullets: [
           "List where similar stories already find readers.",
           "Check formatting, scheduling, and community expectations before launch.",
-          "Keep cross-posting plans realistic for your writing pace."
+          "Keep cross-posting plans realistic for your writing pace.",
+          "Decide which platform is primary for the first month so stats and feedback are easier to interpret."
+        ]
+      },
+      {
+        title: "Royal Road launch fit",
+        body:
+          "Royal Road is often discussed by authors of progression fantasy, LitRPG, fantasy, sci-fi, and long-form serial fiction because it has visible discovery surfaces, active reader expectations, and a culture of watching launch movement. That can be useful for a story with a strong serial hook and a prepared chapter buffer. It can also be stressful for authors who refresh stats constantly or expect one ranking surface to solve packaging problems. If Royal Road is the primary launch platform, the author should prepare a 30-day operating plan before publishing.",
+        bullets: [
+          "Prepare enough chapters to show consistency during the first weeks.",
+          "Make the cover, blurb, tags, and opening chapter point at the same reader.",
+          "Track stats weekly instead of rewriting the whole launch after one day.",
+          "Keep community posts rule-safe and avoid asking for artificial engagement."
+        ]
+      },
+      {
+        title: "Scribble Hub launch fit",
+        body:
+          "Scribble Hub can be part of a cross-posting strategy, but it should not be added casually. Every extra platform adds formatting, scheduling, author-note, comment, and stats-review work. If the author already struggles to keep one cadence stable, cross-posting can create more operational drag than benefit. If the story fits audiences on multiple platforms and the author can maintain the routine, cross-posting may still be useful as a discovery and redundancy strategy.",
+        bullets: [
+          "Check whether similar stories are active on the platform before committing.",
+          "Confirm formatting and metadata needs before copying chapters over.",
+          "Decide whether comments and reader feedback will be monitored in both places.",
+          "Do not promise simultaneous updates unless the chapter buffer can support it."
         ]
       },
       {
         title: "Plan the first month",
         body:
-          "Whichever platform comes first, the author still needs the same operating basics: chapter buffer, release cadence, packaging, feedback path, and a place to track stats.",
+          "Whichever platform comes first, the author still needs the same operating basics: chapter buffer, release cadence, packaging, feedback path, and a place to track stats. The first month should answer a small number of questions. Did the story reach the intended readers? Did the opening promise match the reader response? Did the cadence hold? Did community activity produce useful feedback or only stress? Those answers matter more than declaring a universal winner between platforms.",
         bullets: [
           "Build a 30-day checklist before opening new accounts everywhere.",
           "Keep community-specific rules next to each posting task.",
-          "Review whether cross-posting creates more maintenance than value."
+          "Review whether cross-posting creates more maintenance than value.",
+          "Use one primary platform's stats as the baseline, then compare other platforms only after the workflow is stable."
         ]
       }
     ]

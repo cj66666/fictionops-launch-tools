@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Download, Plus, Trash2 } from "lucide-react";
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import { Download, Plus, Trash2, Upload } from "lucide-react";
 import { sampleSwaps } from "@/data/swaps";
 import { downloadText } from "@/lib/download";
-import { toCsv } from "@/lib/csv";
+import { fromCsv, toCsv } from "@/lib/csv";
 import type { SwapRecord, SwapStatus } from "@/lib/types";
 import { Field, Panel, Pill } from "./ui";
 
@@ -32,12 +32,38 @@ const blankSwap: Omit<SwapRecord, "id"> = {
   notes: ""
 };
 
+const storageKey = "fictionops.shoutoutSwaps.v1";
+
 export function SwapTracker() {
   const [records, setRecords] = useState<SwapRecord[]>(sampleSwaps);
+  const [isHydrated, setIsHydrated] = useState(false);
+  const [importMessage, setImportMessage] = useState("");
+  const importInputRef = useRef<HTMLInputElement>(null);
   const missingCount = useMemo(
     () => records.filter((record) => !record.author || !record.story || !record.agreedDate).length,
     [records]
   );
+
+  useEffect(() => {
+    try {
+      const storedRecords = window.localStorage.getItem(storageKey);
+      if (storedRecords) {
+        const parsedRecords = JSON.parse(storedRecords) as SwapRecord[];
+        if (Array.isArray(parsedRecords)) {
+          setRecords(parsedRecords);
+        }
+      }
+    } catch {
+      setImportMessage("Saved swaps could not be loaded. The sample tracker is still usable.");
+    } finally {
+      setIsHydrated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isHydrated) return;
+    window.localStorage.setItem(storageKey, JSON.stringify(records));
+  }, [isHydrated, records]);
 
   function addRecord() {
     setRecords((current) => [
@@ -59,6 +85,25 @@ export function SwapTracker() {
     setRecords((current) => current.filter((record) => record.id !== id));
   }
 
+  function importCsv(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const importedRecords = fromCsv(String(reader.result ?? ""));
+        setRecords(importedRecords);
+        setImportMessage(`Imported ${importedRecords.length} swaps. Saved in this browser.`);
+      } catch (error) {
+        setImportMessage(error instanceof Error ? error.message : "CSV import failed.");
+      } finally {
+        event.target.value = "";
+      }
+    };
+    reader.readAsText(file);
+  }
+
   return (
     <Panel
       title="Shoutout swaps"
@@ -76,14 +121,28 @@ export function SwapTracker() {
             <Download size={16} />
             CSV
           </button>
+          <button className="button secondary" onClick={() => importInputRef.current?.click()}>
+            <Upload size={16} />
+            Import
+          </button>
+          <input
+            ref={importInputRef}
+            className="hiddenFileInput"
+            type="file"
+            accept=".csv,text/csv"
+            aria-label="Import shoutout swaps CSV"
+            onChange={importCsv}
+          />
         </>
       }
     >
       <div className="swapSummary">
         <Pill tone={records.length > 0 ? "good" : "warn"}>{records.length} partners</Pill>
         <Pill tone={missingCount === 0 ? "good" : "warn"}>{missingCount} missing essentials</Pill>
+        <Pill tone="good">saved locally</Pill>
         <span>Fit first. No fake reviews, irrelevant recs, or mass outreach.</span>
       </div>
+      {importMessage ? <p className="inlineNote">{importMessage}</p> : null}
       <div className="tableShell">
         <table>
           <thead>

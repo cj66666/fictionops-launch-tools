@@ -47,6 +47,13 @@ https://fictionops.com/sitemap.xml
 
 Do not submit before approval.
 
+Implementation readiness:
+
+- The site supports optional Google verification metadata through
+  `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`.
+- After Google provides the verification token, add it to Vercel and redeploy before clicking
+  verify in Search Console.
+
 ## Analytics Packet
 
 Recommended first choice: Vercel Analytics, because the site is already on Vercel.
@@ -82,6 +89,7 @@ Current state:
 
 - Signup/checklist flow is local-only.
 - No email is submitted or stored.
+- Email remains the one review-identified soft-launch gap that still requires human approval.
 
 Approval needed:
 

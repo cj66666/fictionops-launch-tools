@@ -17,6 +17,8 @@ const socialImage = {
   alt: siteSocialImageAlt
 };
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
@@ -47,7 +49,8 @@ export const metadata: Metadata = {
     title: "FictionOps - Royal Road Launch Tools",
     description: siteDescription,
     images: [socialImage.url]
-  }
+  },
+  verification: googleSiteVerification ? { google: googleSiteVerification } : undefined
 };
 
 export default function RootLayout({
