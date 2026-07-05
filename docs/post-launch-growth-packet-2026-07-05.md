@@ -220,6 +220,16 @@ For people who have launched or are preparing to launch:
 Not selling anything. I'm trying to map the workflow and common failure points. Happy to share a summary afterward.
 ```
 
+Executed:
+
+- Posted on 2026-07-05 14:55:54 +08:00 after user approval.
+- Account: `u/Negative-Pea6372`.
+- Flair: `Discussion`.
+- URL: `https://www.reddit.com/r/royalroad/comments/1unv9oh/authors_how_do_you_plan_your_first_30_days_on/`.
+- Outcome: submitted, then immediately removed by `r/royalroad` moderation.
+- Feishu platform process record: `recvotMAThyqQr`.
+- Follow-up decision: do not repost to `r/royalroad` without separate approval.
+
 ## First Feedback Loop
 
 After any approved post or public feedback:

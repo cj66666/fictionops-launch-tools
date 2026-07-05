@@ -80,6 +80,29 @@ Record:
 - any moderator action
 - feedback items
 
+## Execution Result
+
+Executed on 2026-07-05 14:55:54 +08:00 after user approval.
+
+- Platform: `r/royalroad`
+- Account: `u/Negative-Pea6372`
+- Flair: `Discussion`
+- Post URL: `https://www.reddit.com/r/royalroad/comments/1unv9oh/authors_how_do_you_plan_your_first_30_days_on/`
+- Result: submitted successfully, then immediately removed by subreddit moderation.
+- Visible removal message: `抱歉，此帖子已被 r/royalroad 的版主移除。`
+- No FictionOps URL was included.
+- No product name was included.
+- No signup CTA was included.
+- Feishu platform process record: `recvotMAThyqQr`
+
+Interpretation:
+
+- Treat this as a moderation/trust signal, not as community feedback.
+- Do not repost the same question to `r/royalroad` immediately.
+- Next recommended public validation path is either:
+  - Royal Road forum workflow question, no link, after separate approval.
+  - Ask moderators or use an approved megathread route, after separate approval.
+
 Feedback item categories:
 
 - `launch-planning`
@@ -115,4 +138,3 @@ Account: <the Reddit account currently logged into the browser>
 Flair: Discussion
 No links.
 ```
-
