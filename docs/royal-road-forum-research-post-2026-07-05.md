@@ -93,6 +93,29 @@ I'm not promoting a tool here. I want to understand the workflow before I build 
 - If Royal Road requires login, CAPTCHA, account confirmation, category changes, or a
   moderation prompt, stop and ask.
 
+## Execution Status
+
+Status on 2026-07-05 15:07:29 +08:00:
+
+- User approved the prepared Royal Road forum post in chat.
+- Chrome had a Royal Road forum tab open, but the site was not logged in.
+- User confirmed there is no registered Royal Road account.
+- Result: not posted. This step is paused until a Royal Road account exists and the user
+  separately confirms posting from that account.
+- Feishu `平台流程记录`: `recvotPx6gkCYf`.
+
+This is an account availability blocker, not market feedback. Do not treat the lack of a
+Royal Road forum post as a negative signal about author demand.
+
+Recommended replacement for the current soft-launch loop:
+
+1. Continue monitoring the live site, Buttondown, and Vercel Analytics.
+2. Use Search Console/Bing data once the dashboards finish processing.
+3. Do not repost on `r/royalroad` after the immediate moderation removal unless there is
+   separate approval for a revised moderator-safe approach.
+4. If a Royal Road account is created later, reuse this packet only after confirming account,
+   category, and no-links condition again.
+
 ## After-Posting Capture
 
 Record:
@@ -128,4 +151,3 @@ Account: 当前浏览器已登录的 Royal Road 账号
 Category: Writing: Tips & Discussions
 No links.
 ```
-

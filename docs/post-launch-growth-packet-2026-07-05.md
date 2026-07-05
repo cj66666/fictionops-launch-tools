@@ -235,7 +235,20 @@ Next prepared route:
 - `docs/royal-road-forum-research-post-2026-07-05.md`
 - Recommended platform: Royal Road Forums.
 - Recommended category: `Writing: Tips & Discussions`.
-- Status: prepared only; not posted.
+- Status: prepared and approved, but not posted because the user confirmed there is no
+  registered Royal Road account. Treat this as an account availability blocker, not market
+  feedback.
+
+Royal Road forum execution attempt:
+
+- Attempted on 2026-07-05 15:07:29 +08:00 after approval.
+- Chrome had `https://www.royalroad.com/forums` open, but Royal Road showed no logged-in
+  posting session.
+- User confirmed: no Royal Road account is registered.
+- Outcome: not posted.
+- Feishu platform process record: `recvotPx6gkCYf`.
+- Follow-up decision: pause Royal Road forum posting until an account exists and a new
+  action-time confirmation is given.
 
 ## First Feedback Loop
 
@@ -270,6 +283,7 @@ Executed on 2026-07-05 after the deployment audit.
 
 ## Not Approved Yet
 
-- Reddit/Royal Road/Discord posting.
+- Any additional Reddit/Royal Road/Discord posting beyond the already attempted Reddit post
+  and the paused Royal Road forum attempt.
 - Private outreach.
 - Payment or account system.
