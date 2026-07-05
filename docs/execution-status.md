@@ -79,7 +79,8 @@ Objective: execute the independent-site plan as fast as possible, without waitin
 - Vercel deployment completed; `fictionops.com` and `www.fictionops.com` are live and route-verified.
 - Public browser QA completed for `https://fictionops.com` desktop homepage and mobile workbench.
 - Post-launch growth packet prepared for Search Console, analytics, email capture, and first no-link research post.
-- Soft-launch gap fixes completed and deployed: swap tracker localStorage persistence, CSV import, four expanded core guides, and optional Search Console verification meta.
+- Soft-launch gap fixes completed and deployed: swap tracker localStorage persistence, CSV import, all guide pages above the public-launch content threshold, and optional Search Console verification meta.
+- Live launch fixes completed and deployed: `www.fictionops.com` now 308 redirects to apex `fictionops.com`, canonical/OG/sitemap URLs align on apex, inactive public signup CTAs are hidden, and email capture is provider-ready but disabled until approval.
 
 ## Current Decision Gate
 

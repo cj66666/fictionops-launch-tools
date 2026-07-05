@@ -34,6 +34,22 @@ Post-launch review found two issues:
 
 ## Verification
 
+Production deployment:
+
+- Deployment ID: `dpl_6a3Mg9ZqPr2QfsrVuJAPn1Kzo4tV`
+- Vercel URL: `https://fictionops-launch-tools-1y61d7tgb-jingchens-projects-753863a8.vercel.app`
+- Alias: `https://fictionops.com`
+
+Post-deployment results:
+
+- `https://fictionops.com` returns 200.
+- `https://www.fictionops.com` returns 308 to `https://fictionops.com/`.
+- `https://www.fictionops.com/guides/royal-road-stats` returns 308 to the same apex path.
+- `https://www.fictionops.com/sitemap.xml` returns 308 to the apex sitemap.
+- Homepage canonical, `og:url`, and `og:image` point to `https://fictionops.com`.
+- Sitemap contains apex URLs and no `https://www.fictionops.com` URLs.
+- Homepage no longer shows the inactive `Get weekly checklist` CTA while email capture is disabled.
+
 Run before deployment:
 
 ```bash
@@ -49,4 +65,3 @@ node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com
 curl -I https://www.fictionops.com
 curl -I https://fictionops.com
 ```
-
