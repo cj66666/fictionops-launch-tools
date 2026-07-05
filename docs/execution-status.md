@@ -79,7 +79,7 @@ Objective: execute the independent-site plan as fast as possible, without waitin
 - Vercel deployment completed; `fictionops.com` and `www.fictionops.com` are live and route-verified.
 - Public browser QA completed for `https://fictionops.com` desktop homepage and mobile workbench.
 - Post-launch growth packet prepared for Search Console, analytics, email capture, and first no-link research post.
-- Soft-launch gap fixes completed and deployed: swap tracker localStorage persistence, CSV import, expanded core guides, and optional Search Console verification meta.
+- Soft-launch gap fixes completed and deployed: swap tracker localStorage persistence, CSV import, four expanded core guides, and optional Search Console verification meta.
 
 ## Current Decision Gate
 

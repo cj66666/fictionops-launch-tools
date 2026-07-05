@@ -17,6 +17,8 @@ External review identified three pre-soft-launch gaps:
   - `royal-road-rising-stars`
   - `royal-road-stats`
   - `royal-road-vs-scribblehub`
+- Expanded the fourth launch-intent guide:
+  - `web-novel-launch-plan`
 - Added optional Google Search Console verification metadata via:
 
 ```text

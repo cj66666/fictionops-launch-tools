@@ -527,21 +527,78 @@ export const seoPages: SeoPage[] = [
       {
         title: "Build the operating loop",
         body:
-          "A web novel launch is a weekly operating loop: prepare chapters, publish consistently, record stats, talk to the right communities, and adjust packaging based on evidence.",
+          "A web novel launch is a weekly operating loop: prepare chapters, publish consistently, record stats, talk to the right communities, and adjust packaging based on evidence. The mistake many first-time serial authors make is treating launch as a single announcement. In practice, the first month is a system: a chapter queue, a release rhythm, a packaging baseline, a feedback path, and a review habit. If those pieces are not written down, every quiet day feels like a crisis and every spike feels like proof that the plan worked.",
         bullets: [
           "Start with one primary platform and one clear reader promise.",
           "Keep launch tasks dated and reviewable.",
-          "Separate writing work from promotion work so neither disappears."
+          "Separate writing work from promotion work so neither disappears.",
+          "Record what changed each week so later stats have context."
+        ]
+      },
+      {
+        title: "The pre-launch baseline",
+        body:
+          "Before the first public chapter goes live, freeze a baseline. That does not mean the story can never change. It means the author should know what version of the cover, blurb, tags, title, cadence, and first chapter produced the first wave of feedback. Without a baseline, it is hard to tell whether a weak start came from the story premise, the opening chapter, the cover promise, a thin stockpile, or simply not enough readers seeing the work yet.",
+        bullets: [
+          "Save the launch blurb and cover version before making public changes.",
+          "Write down the planned cadence and the actual chapter buffer.",
+          "List the first communities where feedback or discussion will be sought.",
+          "Decide which stats will be reviewed weekly, not constantly."
+        ]
+      },
+      {
+        title: "The first 30 days",
+        body:
+          "The first month should be planned in phases. The two weeks before launch are for packaging, queue preparation, rule checks, and swap coordination. The first week is for consistent posting and watching obvious friction points. The second week is for comparing early reactions against the story promise. Weeks three and four are for deciding whether the operating system is sustainable. This structure keeps authors from trying to fix everything at once.",
+        bullets: [
+          "Day -14 to -1: prepare chapters, metadata, author notes, and community rule notes.",
+          "Days 1 to 7: publish consistently and record reader-facing events.",
+          "Days 8 to 14: inspect view-to-follow behavior, comments, and opening hook fit.",
+          "Days 15 to 30: adjust one major variable only if the evidence is clear."
+        ]
+      },
+      {
+        title: "Community work without looking like spam",
+        body:
+          "Community work is not the same as dropping a link everywhere. A useful launch presence starts with participation, workflow questions, feedback requests where allowed, and carefully matched shoutout swaps. Each community has its own tolerance for promotion, surveys, AI discussion, and critique requests. The safest launch plan keeps community rules beside the task list so the author can ask the right question in the right place instead of improvising under pressure.",
+        bullets: [
+          "Use workflow and craft questions before asking people to look at a story.",
+          "Keep self-promotion frequency notes next to each planned post.",
+          "Do not send private messages unless the relationship or community rules make it appropriate.",
+          "Track shoutout swaps only after there is real fit and agreement."
+        ]
+      },
+      {
+        title: "Stats review after launch",
+        body:
+          "Stats should answer operational questions. Did the release cadence hold? Did readers who saw the first chapters follow for more? Did a shoutout create a temporary view spike or a lasting follower change? Did comments point to packaging confusion, pacing issues, or genre mismatch? A launch review is strongest when the author records numbers and events together. That turns vague anxiety into a small set of next inspections.",
+        bullets: [
+          "Review stats weekly with release and promotion notes beside them.",
+          "Separate packaging questions from cadence questions.",
+          "Avoid changing cover, blurb, tags, and release rhythm all in the same week.",
+          "Use Patreon planning only after the audience signal is stable enough to model."
         ]
       },
       {
         title: "Keep the stack simple",
         body:
-          "The first launch does not need a complicated growth stack. Use no-login tools and simple exports until the author has enough signal to justify saved accounts, reminders, or deeper reporting.",
+          "The first launch does not need a complicated growth stack. Use no-login tools and simple exports until the author has enough signal to justify saved accounts, reminders, or deeper reporting. A notes app, a launch checklist, a swap sheet, and a weekly review table are enough to start. More automation should come after the author knows which repeated tasks are actually painful. This is also safer for community trust: authors can inspect the work, keep control of their own accounts, and avoid tools that look like platform manipulation.",
         bullets: [
           "Use the launch planner for the first 30 days.",
           "Use the swap tracker only for real partner conversations.",
-          "Use the Patreon calculator when the backlog promise is concrete."
+          "Use the Patreon calculator when the backlog promise is concrete.",
+          "Add accounts, reminders, and deeper reporting only after validation."
+        ]
+      },
+      {
+        title: "What a completed launch plan should contain",
+        body:
+          "A completed launch plan is not just a calendar. It should include the story promise, chapter buffer, release cadence, first-week checklist, community rules, swap commitments, stats review cadence, and a short list of decisions that will wait until week four. That final list matters. It prevents an author from making emotional changes before enough evidence exists. The author can still respond to bugs, broken links, or obvious copy mistakes immediately, but deeper positioning changes deserve a small review window.",
+        bullets: [
+          "Story promise: genre, target reader, and opening hook.",
+          "Operations: chapter queue, release days, and backup buffer.",
+          "Community: where feedback can be requested and where promotion is risky.",
+          "Review: which numbers matter and when they will be checked."
         ]
       }
     ]
