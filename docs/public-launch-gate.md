@@ -51,6 +51,7 @@ Concrete approval options and exact draft copy are in `docs/launch-approval-pack
 - Local Git repository has been initialized and local-only artifacts are ignored.
 - Plan completion audit exists at `docs/plan-completion-audit-2026-07-05.md`.
 - Public launch runbook exists at `docs/public-launch-runbook-2026-07-05.md`.
+- Feature acceptance packet exists at `docs/feature-acceptance-packet-2026-07-05.md`.
 
 ## Approval Needed
 

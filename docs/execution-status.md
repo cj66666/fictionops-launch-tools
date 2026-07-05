@@ -74,6 +74,7 @@ Objective: execute the independent-site plan as fast as possible, without waitin
 - Initial local Git baseline commit created: `4d2f5a9` (`Initial local FictionOps prototype`).
 - Full plan completion audit added, separating completed local execution from human-gated public actions.
 - Public launch runbook added with exact deploy, email, analytics, Search Console, community posting, rollback, and approval-template steps.
+- Feature acceptance packet added for local human review before launch approval.
 
 ## Current Decision Gate
 
@@ -119,6 +120,7 @@ Next material gates require separate human confirmation:
 22. Local Git repository initialization
 23. Plan completion audit
 24. Public launch runbook
+25. Feature acceptance packet
 
 ## Latest QA Evidence
 
@@ -144,6 +146,7 @@ Next material gates require separate human confirmation:
 - `docs/browser-qa-hardening-2026-07-05.md`
 - `docs/plan-completion-audit-2026-07-05.md`
 - `docs/public-launch-runbook-2026-07-05.md`
+- `docs/feature-acceptance-packet-2026-07-05.md`
 - `.gitignore`
 - `scripts/require-public-site-url.mjs`
 - `scripts/verify-launch-readiness.mjs`
