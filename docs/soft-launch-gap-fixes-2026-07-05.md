@@ -61,6 +61,9 @@ Production deployments completed:
 - Follow-up deployment ID: `dpl_F5QcNc2qZ9pGuKdpa9fqzd3yDkq7`
 - Follow-up Vercel URL: `https://fictionops-launch-tools-p7p68g03g-jingchens-projects-753863a8.vercel.app`
 - Follow-up alias: `https://fictionops.com`
+- Guide-depth deployment ID: `dpl_Eq35g6qqaVMP9FvQVpJCxquCA7KE`
+- Guide-depth Vercel URL: `https://fictionops-launch-tools-fjd8whnro-jingchens-projects-753863a8.vercel.app`
+- Guide-depth alias: `https://fictionops.com`
 
 Public spot checks:
 
@@ -68,8 +71,13 @@ Public spot checks:
 - `https://fictionops.com/guides/royal-road-stats` returned 200.
 - `https://fictionops.com/guides/royal-road-vs-scribblehub` returned 200.
 - `https://fictionops.com/guides/web-novel-launch-plan` returned 200 and contains the expanded launch-plan sections.
+- `https://fictionops.com/guides/royal-road-author-discords` returned 200 after guide-depth expansion.
+- `https://fictionops.com/guides/royal-road-cover-checklist` returned 200 after guide-depth expansion.
+- `https://fictionops.com/guides/royal-road-genre-rising-stars` returned 200 after guide-depth expansion.
+- `https://fictionops.com/guides/royal-road-views-vs-followers` returned 200 after guide-depth expansion.
 - `https://fictionops.com/app` returned 200.
 - `node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com` passed after the follow-up deployment.
+- `node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com` passed after the guide-depth deployment.
 
 Public screenshot:
 
