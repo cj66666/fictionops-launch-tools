@@ -76,8 +76,13 @@ Rules:
 - No ad pixels.
 - No session replay.
 - No Royal Road account data.
-- Update privacy copy before enabling analytics.
-- Re-run public route verification after implementation.
+- Use the existing provider-ready analytics configuration:
+  - `NEXT_PUBLIC_ANALYTICS_PROVIDER`
+  - `NEXT_PUBLIC_ANALYTICS_DOMAIN`
+  - `NEXT_PUBLIC_UMAMI_WEBSITE_ID`
+  - `NEXT_PUBLIC_UMAMI_HOST_URL`
+- Privacy copy is already conditional and will show analytics-provider language when configured.
+- Re-run public route verification after enabling a provider.
 
 ## Email Capture Packet
 

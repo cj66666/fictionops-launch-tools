@@ -207,7 +207,16 @@ Rules:
 - Do not add session replay.
 - Do not add ad pixels.
 - Do not collect Royal Road credentials or account data.
-- Update privacy copy before launch if analytics is enabled.
+- Configure the provider-ready analytics layer only after approval:
+
+```text
+NEXT_PUBLIC_ANALYTICS_PROVIDER=
+NEXT_PUBLIC_ANALYTICS_DOMAIN=fictionops.com
+NEXT_PUBLIC_UMAMI_WEBSITE_ID=
+NEXT_PUBLIC_UMAMI_HOST_URL=
+```
+
+- Conditional privacy copy is already in place and changes when analytics is enabled.
 
 Verification:
 

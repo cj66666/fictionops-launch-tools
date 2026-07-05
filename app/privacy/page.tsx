@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { PublicShell } from "@/components/PublicShell";
+import { getAnalyticsConfig } from "@/lib/analytics";
 import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { buildPageMetadata } from "@/lib/metadata";
 import { legalEffectiveDate, siteName } from "@/lib/site";
 
 const description = `${siteName} privacy notes for the no-login MVP.`;
+const analyticsConfig = getAnalyticsConfig();
 const emailCaptureConfig = getEmailCaptureConfig();
 
 export const metadata = buildPageMetadata({
@@ -75,11 +77,29 @@ export default function PrivacyPage() {
           </section>
 
           <section>
+            <h2>Analytics</h2>
+            {analyticsConfig.enabled ? (
+              <p>
+                This deployment uses the approved {analyticsConfig.provider} analytics provider for
+                aggregate site measurement. Analytics is used to understand page visits and product
+                usage patterns, not to collect Royal Road, Reddit, Discord, Patreon, Ream, or other
+                platform credentials.
+              </p>
+            ) : (
+              <p>
+                Product analytics is disabled in this deployment. No Plausible, Umami, Vercel
+                Analytics, or similar analytics script is loaded unless an analytics provider is
+                separately approved and configured.
+              </p>
+            )}
+          </section>
+
+          <section>
             <h2>Future changes</h2>
             <p>
-              Saved plans, analytics, or paid features will require a separate product decision and
-              an updated privacy policy before being enabled. Email signup also remains disabled
-              unless this deployment is configured with an approved provider action.
+              Saved plans or paid features will require a separate product decision and an updated
+              privacy policy before being enabled. Email signup and analytics also remain disabled
+              unless this deployment is configured with approved provider settings.
             </p>
           </section>
         </article>

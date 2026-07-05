@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { absoluteUrl } from "@/lib/metadata";
 import {
   siteDescription,
@@ -60,7 +61,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <AnalyticsScripts />
+      </body>
     </html>
   );
 }
