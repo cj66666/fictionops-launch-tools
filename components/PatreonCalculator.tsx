@@ -86,7 +86,7 @@ export function PatreonCalculator() {
               </div>
               <div className="money">
                 <DollarSign size={15} />
-                {scenario.monthlyRevenue.toLocaleString(undefined, {
+                {scenario.monthlyRevenue.toLocaleString("en-US", {
                   maximumFractionDigits: 0
                 })}
                 /mo

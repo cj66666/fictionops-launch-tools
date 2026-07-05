@@ -160,7 +160,7 @@ export function LaunchPlanner({ input, onInputChange, plan }: LaunchPlannerProps
           </div>
           <div className="miniStack">
             <Pill tone={input.currentWordCount >= 20000 ? "good" : "warn"}>
-              {input.currentWordCount.toLocaleString()} words
+              {input.currentWordCount.toLocaleString("en-US")} words
             </Pill>
             <Pill tone={input.stockpiledChapters >= input.publicChaptersPerWeek * 4 ? "good" : "warn"}>
               {input.stockpiledChapters} chapters
