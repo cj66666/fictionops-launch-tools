@@ -19,6 +19,12 @@ External review identified three pre-soft-launch gaps:
   - `royal-road-vs-scribblehub`
 - Expanded the fourth launch-intent guide:
   - `web-novel-launch-plan`
+- Expanded the remaining thin guide pages beyond the public-launch content threshold:
+  - `royal-road-genre-rising-stars`
+  - `royal-road-views-vs-followers`
+  - `royal-road-author-discords`
+  - `royal-road-cover-checklist`
+- Added a guide-depth test so guide pages cannot regress to outline-length content.
 - Added optional Google Search Console verification metadata via:
 
 ```text

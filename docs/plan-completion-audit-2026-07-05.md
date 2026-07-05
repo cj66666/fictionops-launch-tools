@@ -6,9 +6,9 @@ Source plan:
 
 ## Summary
 
-The plan has been executed through the local MVP and public-readiness gate as far as the AI can proceed without human approval.
+The plan has been executed through public deployment and the current soft-launch readiness gate as far as the AI can proceed without additional human approval.
 
-The remaining work is not local implementation work. It is gated by explicit approval because it involves public deployment, domain purchase, real email capture, analytics, Search Console, posting, private outreach, Discord interaction, or payment/account integrations.
+The remaining work is mostly external-growth work. It is gated by explicit approval because it involves real email capture, analytics, Search Console, posting, private outreach, Discord interaction, or payment/account integrations.
 
 ## Phase 0: Research And Selection
 
@@ -38,7 +38,7 @@ Human-gated items still not executed:
 
 ## Phase 1: MVP上线
 
-Status: complete locally, not publicly launched.
+Status: complete and publicly deployed.
 
 Evidence:
 
@@ -57,10 +57,13 @@ Evidence:
   - Shoutout Swap Tracker
   - Patreon / Backlog Calculator
   - Community Rules Checklist
-- Export helpers implemented:
+- Export/import helpers implemented:
   - Markdown launch plan export
   - CSV swap export
+  - CSV swap import
+- Swap tracker records persist in localStorage.
 - SEO content pages implemented for initial tools and guides.
+- Core guide pages have been expanded past the public-launch minimum content threshold.
 - Feedback kit implemented at `/feedback`.
 - Public readiness routes implemented:
   - `/sitemap.xml`
@@ -79,14 +82,17 @@ Verification evidence:
 
 - `npm run verify:routes` passed.
 - `npm run verify:local-preview` passed.
-- Latest local test suite: 13 files, 37 tests passed.
+- Latest local test suite: 13 files, 37 tests passed before the final guide-depth pass; the current SEO suite also enforces substantive guide content.
 - Latest build: 31 routes generated.
 - Browser QA screenshots exist under `output/playwright/`.
 
+Human-gated items now executed with user approval:
+
+- Public deployment on Vercel.
+- Real domain connection / DNS configuration for `fictionops.com` and `www.fictionops.com`.
+
 Human-gated items still not executed:
 
-- Public deployment. Completed on Vercel at `https://fictionops-launch-tools.vercel.app`.
-- Real domain connection / DNS configuration. Completed for `fictionops.com` and `www.fictionops.com`.
 - Real email provider.
 - Analytics.
 - Search Console submission.
@@ -94,12 +100,13 @@ Human-gated items still not executed:
 
 ## Phase 2: Traffic And Mailing List
 
-Status: prepared, not executed.
+Status: public SEO foundation deployed; external acquisition actions still require approval.
 
 Prepared evidence:
 
 - Blog/guides index exists at `/blog`.
-- SEO tool and guide pages exist.
+- SEO tool and guide pages exist at `https://fictionops.com`.
+- Four highest-intent guide pages were expanded first, followed by the remaining thin guide pages.
 - RSS feed exists at `/feed.xml`.
 - Feedback kit exists at `/feedback`.
 - Weekly checklist/signup preview exists but is local-only.
@@ -107,7 +114,6 @@ Prepared evidence:
 
 Blocked by human gate:
 
-- Real public URL is required before traffic collection.
 - Real email capture requires provider approval and privacy copy update.
 - Analytics requires provider approval.
 - Search Console requires public URL approval.
@@ -147,10 +153,9 @@ Evidence:
 
 ## Next Required Human Decision
 
-The local execution gate is complete. To continue beyond local preparation, the user must approve one concrete bundle from:
+The public deployment and local implementation gates are complete. To continue beyond the current public site, the user must approve one concrete external-growth bundle from:
 
-- Bundle A: Deploy only.
-- Bundle B: Deploy plus basic email capture.
+- Bundle B: Basic email capture.
 - Bundle C: Research post only.
 - Bundle D: Full soft launch.
 

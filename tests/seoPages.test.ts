@@ -1,6 +1,17 @@
 import { describe, expect, it } from "vitest";
 import { findSeoPage, seoPages } from "@/data/seoPages";
 
+function seoPageWordCount(page: (typeof seoPages)[number]) {
+  const content = [
+    page.title,
+    page.description,
+    page.intent,
+    ...(page.contentSections ?? []).flatMap((section) => [section.title, section.body, ...(section.bullets ?? [])])
+  ].join(" ");
+
+  return content.match(/[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)?/g)?.length ?? 0;
+}
+
 describe("seo pages", () => {
   it("keeps related links resolvable", () => {
     const slugs = new Set(seoPages.map((page) => page.slug));
@@ -32,5 +43,14 @@ describe("seo pages", () => {
       expect(page.ctaHref).toMatch(/^\/(#|app#|tools|guides)?/);
       expect(page.contentSections?.length).toBeGreaterThanOrEqual(2);
     }
+  });
+
+  it("keeps guide pages substantive enough for public launch", () => {
+    const thinGuides = seoPages
+      .filter((page) => page.type === "guide")
+      .map((page) => ({ slug: page.slug, words: seoPageWordCount(page) }))
+      .filter((page) => page.words < 650);
+
+    expect(thinGuides).toEqual([]);
   });
 });
