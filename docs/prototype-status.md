@@ -57,6 +57,7 @@ Implemented surfaces:
 - Post-launch growth packet prepared for Search Console, analytics, email capture, and first no-link research post.
 - Soft-launch gap fixes completed and deployed: swap tracker localStorage persistence, CSV import, all guide pages above the public-launch content threshold, and optional Search Console verification meta.
 - Live launch fixes completed and deployed: `www.fictionops.com` now 308 redirects to apex `fictionops.com`, canonical/OG/sitemap URLs align on apex, inactive public signup CTAs are hidden, and email capture is provider-ready but disabled until approval.
+- Analytics is provider-ready but disabled until approval, with support for Vercel Analytics, Plausible, and Umami via environment variables.
 
 ## Runtime
 

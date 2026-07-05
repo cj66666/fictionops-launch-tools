@@ -36,6 +36,19 @@ Do not set analytics environment variables, install a provider package, or enabl
 
 ## Verification
 
+Production deployment:
+
+- Deployment ID: `dpl_J34ucA6ncJk8wxToAj6w8w7GRd5G`
+- Vercel URL: `https://fictionops-launch-tools-9tkc4yxfm-jingchens-projects-753863a8.vercel.app`
+- Alias: `https://fictionops.com`
+
+Post-deployment results:
+
+- `node scripts/verify-launch-readiness.mjs --origin=https://fictionops.com` passed.
+- Homepage HTML does not contain Plausible, Umami, or Vercel Analytics scripts while analytics is disabled.
+- Privacy page says product analytics is disabled.
+- `https://www.fictionops.com` still redirects to `https://fictionops.com/`.
+
 Default-disabled verification:
 
 ```bash
@@ -49,4 +62,3 @@ Provider smoke build, not for deployment:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://fictionops.com NEXT_PUBLIC_ANALYTICS_PROVIDER=plausible NEXT_PUBLIC_ANALYTICS_DOMAIN=fictionops.com npm run build:public
 ```
-
