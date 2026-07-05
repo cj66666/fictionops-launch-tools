@@ -13,6 +13,7 @@ import {
   Mail,
   ShieldCheck
 } from "lucide-react";
+import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { defaultLaunchInput, generateLaunchPlan } from "@/lib/launchPlan";
 import { isValidPreviewEmail, type SignupMessageTone } from "@/lib/signup";
 import { CommunityRules } from "./CommunityRules";
@@ -42,6 +43,8 @@ const proItems = [
   "Benchmark history"
 ];
 
+const emailCaptureConfig = getEmailCaptureConfig();
+
 export function FictionOpsApp() {
   const [launchInput, setLaunchInput] = useState(defaultLaunchInput);
   const launchPlan = useMemo(() => generateLaunchPlan(launchInput), [launchInput]);
@@ -58,14 +61,20 @@ export function FictionOpsApp() {
   }
 
   function previewSignup(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
     if (!isValidPreviewEmail(email)) {
+      event.preventDefault();
       setSignupMessage({
         text: "Enter a valid email to preview the update signup.",
         tone: "error"
       });
       return;
     }
+
+    if (emailCaptureConfig.enabled) {
+      return;
+    }
+
+    event.preventDefault();
     setSignupMessage({
       text: "Preview saved in this browser session. No email was sent or stored.",
       tone: "success"
@@ -149,11 +158,17 @@ export function FictionOpsApp() {
                   <p>Waitlist preview for benchmark updates, reminders, and release checklists.</p>
                 </div>
               </div>
-              <form className="signupForm" onSubmit={previewSignup}>
+              <form
+                action={emailCaptureConfig.enabled ? emailCaptureConfig.action : undefined}
+                className="signupForm"
+                method={emailCaptureConfig.enabled ? emailCaptureConfig.method : undefined}
+                onSubmit={previewSignup}
+              >
                 <label className="field">
                   <span>Email</span>
                   <input
                     autoComplete="email"
+                    name={emailCaptureConfig.emailFieldName}
                     onChange={(event) => {
                       setEmail(event.target.value);
                       setSignupMessage(null);
@@ -163,14 +178,26 @@ export function FictionOpsApp() {
                     value={email}
                   />
                 </label>
+                {emailCaptureConfig.enabled ? (
+                  <input
+                    name={emailCaptureConfig.sourceFieldName}
+                    type="hidden"
+                    value={emailCaptureConfig.sourceValue}
+                  />
+                ) : null}
                 <button className="button full" type="submit">
                   <Bell size={15} />
-                  Preview signup
+                  {emailCaptureConfig.enabled ? "Get checklist" : "Preview signup"}
                 </button>
               </form>
               {signupMessage ? (
                 <p className={`signupMessage ${signupMessage.tone}`}>{signupMessage.text}</p>
               ) : null}
+              <p className="signupFinePrint">
+                {emailCaptureConfig.enabled
+                  ? "This form submits your email to the approved checklist provider. No platform credentials are requested."
+                  : "Preview mode only. No email is sent, stored, or subscribed."}
+              </p>
               <div className="sampleOutputs">
                 <strong>Sample outputs</strong>
                 <span>Launch checklist</span>

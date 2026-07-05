@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { PublicShell } from "@/components/PublicShell";
+import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { buildPageMetadata } from "@/lib/metadata";
 import { legalEffectiveDate, siteName } from "@/lib/site";
 
 const description = `${siteName} privacy notes for the no-login MVP.`;
+const emailCaptureConfig = getEmailCaptureConfig();
 
 export const metadata = buildPageMetadata({
   title: "Privacy",
@@ -41,11 +43,19 @@ export default function PrivacyPage() {
 
           <section>
             <h2>Update signup preview</h2>
-            <p>
-              The weekly checklist signup in this local MVP is a preview only. It does not send,
-              store, or subscribe an email address until an email provider is separately approved
-              and connected.
-            </p>
+            {emailCaptureConfig.enabled ? (
+              <p>
+                The weekly checklist form submits the entered email address and a source tag to the
+                approved email provider. It does not request Royal Road, Reddit, Discord, Patreon,
+                Ream, or other platform credentials.
+              </p>
+            ) : (
+              <p>
+                The weekly checklist signup in this local MVP is a preview only. It does not send,
+                store, or subscribe an email address until an email provider is separately approved
+                and connected.
+              </p>
+            )}
           </section>
 
           <section>
@@ -67,8 +77,9 @@ export default function PrivacyPage() {
           <section>
             <h2>Future changes</h2>
             <p>
-              Email signup, saved plans, analytics, or paid features will require a separate product
-              decision and an updated privacy policy before being enabled.
+              Saved plans, analytics, or paid features will require a separate product decision and
+              an updated privacy policy before being enabled. Email signup also remains disabled
+              unless this deployment is configured with an approved provider action.
             </p>
           </section>
         </article>

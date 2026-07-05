@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowRight, BookOpen, LogIn } from "lucide-react";
+import { ArrowRight, BookOpen, LogIn, Wrench } from "lucide-react";
+import { getEmailCaptureConfig } from "@/lib/emailCapture";
 
 const navItems = [
   { href: "/tools", label: "Tools" },
@@ -40,6 +41,8 @@ const footerGroups = [
 ];
 
 export function SiteHeader() {
+  const emailCaptureConfig = getEmailCaptureConfig();
+
   return (
     <header className="siteHeader">
       <Link className="siteBrand" href="/">
@@ -58,16 +61,25 @@ export function SiteHeader() {
           <LogIn size={15} />
           Log in
         </Link>
-        <Link className="button primary" href="/signup">
-          Sign up
-          <ArrowRight size={15} />
-        </Link>
+        {emailCaptureConfig.enabled ? (
+          <Link className="button primary" href="/signup">
+            Sign up
+            <ArrowRight size={15} />
+          </Link>
+        ) : (
+          <Link className="button primary" href="/app">
+            Open tools
+            <Wrench size={15} />
+          </Link>
+        )}
       </div>
     </header>
   );
 }
 
 export function SiteFooter() {
+  const emailCaptureConfig = getEmailCaptureConfig();
+
   return (
     <footer className="siteFooter">
       <div className="siteFooterIntro">
@@ -86,7 +98,7 @@ export function SiteFooter() {
             <h2>{group.title}</h2>
             {group.links.map((link) => (
               <Link href={link.href} key={link.href}>
-                {link.label}
+                {link.href === "/signup" && !emailCaptureConfig.enabled ? "Signup status" : link.label}
               </Link>
             ))}
           </div>

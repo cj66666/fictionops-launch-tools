@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   ArrowRight,
   BarChart3,
+  BookOpen,
   CalendarRange,
   CheckCircle2,
   Database,
@@ -17,6 +18,7 @@ import {
 } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { PublicShell } from "@/components/PublicShell";
+import { getEmailCaptureConfig } from "@/lib/emailCapture";
 import { buildPageMetadata } from "@/lib/metadata";
 import { buildSoftwareApplicationJsonLd, buildWebSiteJsonLd } from "@/lib/structuredData";
 
@@ -94,6 +96,8 @@ export const metadata = buildPageMetadata({
 });
 
 export default function Home() {
+  const emailCaptureConfig = getEmailCaptureConfig();
+
   return (
     <PublicShell>
       <JsonLd data={[buildWebSiteJsonLd(), buildSoftwareApplicationJsonLd()]} />
@@ -110,10 +114,17 @@ export default function Home() {
                 Open free tools
                 <ArrowRight size={17} />
               </Link>
-              <Link className="button secondary large" href="/signup">
-                <Mail size={17} />
-                Get weekly checklist
-              </Link>
+              {emailCaptureConfig.enabled ? (
+                <Link className="button secondary large" href="/signup">
+                  <Mail size={17} />
+                  Get weekly checklist
+                </Link>
+              ) : (
+                <Link className="button secondary large" href="/blog">
+                  <BookOpen size={17} />
+                  Read launch guides
+                </Link>
+              )}
             </div>
             <div className="trustRow siteTrustRow" aria-label="Trust and safety promises">
               {trustItems.map((item) => (

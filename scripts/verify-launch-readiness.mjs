@@ -55,7 +55,7 @@ const checks = [
   {
     path: "/signup",
     canonicalPath: "/signup",
-    includes: ["Checklist and Pro waitlist preview.", "No email is sent"]
+    includes: ["Checklist and Pro waitlist preview.", "No account is created"]
   },
   {
     path: "/tools/royal-road-launch-plan",

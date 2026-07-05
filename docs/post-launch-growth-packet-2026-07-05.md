@@ -87,8 +87,8 @@ Alternative: MailerLite.
 
 Current state:
 
-- Signup/checklist flow is local-only.
-- No email is submitted or stored.
+- Signup/checklist flow is provider-ready but disabled by default.
+- No email is submitted or stored unless `NEXT_PUBLIC_EMAIL_FORM_ACTION` is configured after approval.
 - Email remains the one review-identified soft-launch gap that still requires human approval.
 
 Approval needed:
@@ -103,8 +103,14 @@ Rules:
 
 - Store only email address and source tag.
 - No Royal Road username, story URL, credentials, or private account data.
-- Update privacy copy before activation.
-- Verify empty, invalid, success, and provider-failure states.
+- Use the existing provider-ready form configuration:
+  - `NEXT_PUBLIC_EMAIL_FORM_ACTION`
+  - `NEXT_PUBLIC_EMAIL_FORM_METHOD`
+  - `NEXT_PUBLIC_EMAIL_FIELD_NAME`
+  - `NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME`
+  - `NEXT_PUBLIC_EMAIL_SOURCE_VALUE`
+- Privacy copy is already conditional and will show provider language when the form action is configured.
+- Verify empty, invalid, successful subscription, and provider-failure states after the provider is connected.
 
 ## First Community Research Post
 

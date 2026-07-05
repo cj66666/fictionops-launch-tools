@@ -23,6 +23,9 @@ describe("security headers config", () => {
     expect(
       allHeaders.find((header) => header.key === "Content-Security-Policy-Report-Only")?.value
     ).toContain("default-src 'self'");
+    expect(
+      allHeaders.find((header) => header.key === "Content-Security-Policy-Report-Only")?.value
+    ).toContain("form-action 'self'");
     expect(headerRules.find((rule) => rule.source === "/:path(login|signup)")?.headers).toEqual([
       { key: "X-Robots-Tag", value: "noindex, follow" }
     ]);

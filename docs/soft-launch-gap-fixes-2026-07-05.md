@@ -25,6 +25,13 @@ External review identified three pre-soft-launch gaps:
   - `royal-road-author-discords`
   - `royal-road-cover-checklist`
 - Added a guide-depth test so guide pages cannot regress to outline-length content.
+- Added disabled-by-default provider-ready email capture configuration:
+  - `NEXT_PUBLIC_EMAIL_FORM_ACTION`
+  - `NEXT_PUBLIC_EMAIL_FORM_METHOD`
+  - `NEXT_PUBLIC_EMAIL_FIELD_NAME`
+  - `NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME`
+  - `NEXT_PUBLIC_EMAIL_SOURCE_VALUE`
+- Updated signup, privacy, and `llms.txt` copy so they reflect whether an approved provider is configured.
 - Added optional Google Search Console verification metadata via:
 
 ```text
@@ -33,8 +40,8 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 ## Still Human-Gated
 
-Email capture is still not connected. Connecting Buttondown or MailerLite requires explicit approval,
-provider choice, and privacy copy update.
+Email capture is provider-ready but still not connected. Connecting Buttondown or MailerLite requires
+explicit approval, provider choice, and setting `NEXT_PUBLIC_EMAIL_FORM_ACTION`.
 
 ## Verification
 

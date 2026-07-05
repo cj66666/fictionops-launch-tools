@@ -160,12 +160,19 @@ Only run after explicit provider approval.
 - Optional source tag: `fictionops-public-launch`.
 - No Royal Road username, credentials, story URL, or private account data.
 
-3. Update privacy page before activating capture.
+3. Confirm the conditional privacy copy is acceptable for the chosen provider.
 
-4. Replace the local-only signup preview with either:
+4. Configure the provider-ready signup form with environment variables:
 
-- provider embed, or
-- server/API endpoint using provider key from environment variables.
+```text
+NEXT_PUBLIC_EMAIL_FORM_ACTION=
+NEXT_PUBLIC_EMAIL_FORM_METHOD=post
+NEXT_PUBLIC_EMAIL_FIELD_NAME=email
+NEXT_PUBLIC_EMAIL_SOURCE_FIELD_NAME=source
+NEXT_PUBLIC_EMAIL_SOURCE_VALUE=fictionops-weekly-checklist
+```
+
+The form remains local-only when `NEXT_PUBLIC_EMAIL_FORM_ACTION` is blank.
 
 5. Verify states:
 
