@@ -27,7 +27,7 @@ describe("structured data helpers", () => {
     expect(buildSoftwareApplicationJsonLd(page)).toEqual(
       expect.objectContaining({
         "@type": "SoftwareApplication",
-        name: "Royal Road Launch Plan",
+        name: "Free Royal Road Launch Checklist",
         url: `${siteUrl}/tools/royal-road-launch-plan`,
         offers: expect.objectContaining({
           price: "0",

@@ -4,11 +4,11 @@ export const seoPages: SeoPage[] = [
   {
     slug: "royal-road-launch-plan",
     type: "tool",
-    title: "Royal Road Launch Plan",
-    description: "Create a first 30-day Royal Road launch checklist from your chapter stockpile, cadence, swaps, and monetization plan.",
+    title: "Free Royal Road Launch Checklist",
+    description: "Build a free 30-day Royal Road launch checklist from your chapter stockpile, posting cadence, shoutout swaps, and Patreon plan.",
     publishedAt: "2026-07-04",
-    updatedAt: "2026-07-05",
-    primaryKeyword: "royal road launch plan",
+    updatedAt: "2026-07-13",
+    primaryKeyword: "royal road launch checklist",
     intent: "Author wants a schedule and checklist before publishing.",
     cta: "Generate your launch plan",
     ctaHref: "/app#launch",
@@ -51,6 +51,29 @@ export const seoPages: SeoPage[] = [
           "Export the markdown plan before making manual edits elsewhere.",
           "Re-run the plan when the launch date or cadence changes."
         ]
+      },
+      {
+        title: "A practical 30-day Royal Road launch example",
+        body:
+          "A workable launch does not need the maximum possible posting rate. Suppose an author has 18 stockpiled chapters at about 2,000 words each and can sustainably write three chapters per week. The checklist should reserve the two weeks before launch for packaging, scheduling, rule checks, and credible swap conversations; use launch week for a small opening batch and consistent follow-up chapters; then review views, follows, comments, and release reliability weekly through day 30.",
+        bullets: [
+          "Day -14: freeze the cover, blurb, tags, content warnings, and first-week chapter queue.",
+          "Day -7: record a baseline and confirm only real shoutout or ad commitments.",
+          "Day 0: publish the planned opening batch and record the exact public package.",
+          "Days 1-7: follow the promised cadence and note every release or promotion event.",
+          "Days 8-30: review weekly, change one major variable at a time, and protect the backlog."
+        ]
+      },
+      {
+        title: "Choose a sustainable 3, 5, or 7 chapter schedule",
+        body:
+          "Posting more often creates more release events, but it also consumes the stockpile faster. For a 30-day plan, three chapters per week uses roughly 13 chapters, five per week uses roughly 22, and daily posting uses about 30. Add a safety buffer on top of those numbers because editing delays, illness, and Patreon promises can consume the same queue. Royal Road's own chapter guidance favors consistency over dumping many chapters at once.",
+        bullets: [
+          "3 per week: the safest starting point for authors still building a writing buffer.",
+          "5 per week: useful only when the stockpile and ongoing writing rate can support it.",
+          "7 per week: a high-burn schedule that needs a substantial queue and a clear slowdown plan.",
+          "If the stockpile cannot cover the first month plus a buffer, lower cadence before launch."
+        ]
       }
     ],
     trustNotes: [
@@ -65,8 +88,8 @@ export const seoPages: SeoPage[] = [
     title: "Shoutout Swap Tracker",
     description: "Track Royal Road shoutout partners, snippets, dates, insertion locations, and confirmation status.",
     publishedAt: "2026-07-04",
-    updatedAt: "2026-07-05",
-    primaryKeyword: "royal road shoutout swaps",
+    updatedAt: "2026-07-13",
+    primaryKeyword: "royal road shoutout swap tracker",
     intent: "Author wants to coordinate swaps without losing track.",
     cta: "Start tracking swaps",
     ctaHref: "/app#swaps",
@@ -121,9 +144,9 @@ export const seoPages: SeoPage[] = [
     slug: "royal-road-patreon-calculator",
     type: "tool",
     title: "Royal Road Patreon Calculator",
-    description: "Estimate Patreon scenarios and advance-chapter runway for a Royal Road serial.",
+    description: "Use a free Royal Road Patreon calculator to estimate patron scenarios, monthly revenue, and advance-chapter backlog runway.",
     publishedAt: "2026-07-04",
-    updatedAt: "2026-07-05",
+    updatedAt: "2026-07-13",
     primaryKeyword: "royal road patreon calculator",
     intent: "Author wants to estimate subscribers, revenue, and backlog.",
     cta: "Calculate Patreon runway",
@@ -187,6 +210,28 @@ export const seoPages: SeoPage[] = [
         ]
       },
       {
+        title: "Follower scenarios: 500, 1,000, and 5,000",
+        body:
+          "Follower count changes the scale of a Patreon forecast, not its certainty. At an editable 1 percent / 3 percent / 6 percent conversion assumption, 500 followers produces 5 / 15 / 30 patrons; 1,000 produces 10 / 30 / 60; and 5,000 produces 50 / 150 / 300. Multiply those patron counts by the calculator's weighted average tier value, then check whether the chapter backlog can actually support the offer.",
+        bullets: [
+          "500 followers: test whether a small paid group is worth the operational overhead.",
+          "1,000 followers: compare conservative and base cases before adding more tiers.",
+          "5,000 followers: model support workload and backlog risk, not only headline revenue.",
+          "Change the conversion assumptions whenever your own observed audience data disagrees."
+        ]
+      },
+      {
+        title: "Run a sensitivity check before publishing tiers",
+        body:
+          "The most useful calculator exercise is to change one assumption at a time. Lower the conversion rate, change the weighted tier value, or increase the paid release cadence and see whether the plan still holds. A plan that works only in the optimistic case is not launch-ready. A plan that remains coherent after a conservative conversion and a slower writing month has more operational room.",
+        bullets: [
+          "Start with the conservative conversion case and the cadence you have already sustained.",
+          "Test one fewer advance chapter if the paid queue would otherwise shrink every week.",
+          "Do not count free Patreon followers as paid patrons.",
+          "Review platform fees and taxes separately; the displayed estimate is not take-home income."
+        ]
+      },
+      {
         title: "What it deliberately does not benchmark",
         body:
           "This calculator does not claim to know the typical conversion rate for every Royal Road genre, follower tier, or author platform. Data-heavy market reports can be useful background reading, but the first operational question is narrower: what happens to the author's chapter queue if their own conservative, base, or optimistic assumption comes true?",
@@ -208,11 +253,11 @@ export const seoPages: SeoPage[] = [
   {
     slug: "royal-road-rising-stars",
     type: "guide",
-    title: "Royal Road Rising Stars: What to Track Before Launch",
-    description: "A practical readiness guide for Rising Stars watch tasks, launch cadence, and tracking without ranking promises.",
+    title: "Royal Road Rising Stars Readiness Checklist",
+    description: "Use a practical Royal Road Rising Stars readiness checklist for packaging, chapter buffer, cadence, tracking, and community-safe launch preparation.",
     publishedAt: "2026-07-04",
-    updatedAt: "2026-07-05",
-    primaryKeyword: "how to get on rising stars royal road",
+    updatedAt: "2026-07-13",
+    primaryKeyword: "royal road rising stars readiness checklist",
     intent: "Author wants practical launch guidance.",
     cta: "Add Rising Stars watch tasks to your plan",
     ctaHref: "/app#launch",
@@ -272,6 +317,18 @@ export const seoPages: SeoPage[] = [
           "Add one note for every public event that could affect discovery.",
           "Use weekly review dates to avoid constant stat refreshing.",
           "Turn the week-four review into one focused next experiment."
+        ]
+      },
+      {
+        title: "Score launch readiness without predicting a rank",
+        body:
+          "Use five categories worth two points each: packaging, chapter buffer, sustainable cadence, measurement, and community preparation. Award two points when the category is complete, one when it is partly complete, and zero when it is missing. A score of 8-10 means the operating basics are ready for a measured launch; 5-7 means fix the weakest category first; 0-4 means delay promotion and build the launch foundation. The score measures preparation only and does not estimate whether the story will reach Rising Stars.",
+        bullets: [
+          "Packaging: cover, blurb, tags, warnings, and opening promise agree.",
+          "Buffer: the first month of the chosen cadence is written with extra safety room.",
+          "Cadence: release days are scheduled at a rate the author has already sustained.",
+          "Measurement: baseline stats and weekly review dates are written down.",
+          "Community: current rules are checked and only credible swaps or posts are planned."
         ]
       }
     ]
@@ -423,17 +480,28 @@ export const seoPages: SeoPage[] = [
   {
     slug: "royal-road-views-vs-followers",
     type: "guide",
-    title: "Royal Road Views vs Followers",
-    description: "A practical way to read early launch views, followers, favorites, comments, and retention without overreacting to one noisy metric.",
+    title: "Royal Road Average Views: Views vs Followers",
+    description: "Understand Royal Road average views, followers, favorites, comments, and retention without relying on a misleading universal benchmark.",
     publishedAt: "2026-07-05",
-    updatedAt: "2026-07-05",
-    primaryKeyword: "royal road views vs followers",
+    updatedAt: "2026-07-13",
+    primaryKeyword: "royal road average views",
     intent: "Author wants to understand whether early story numbers are healthy.",
     cta: "Use the weekly stats checklist",
     ctaHref: "/app#updates",
     sources: ["https://www.royalroad.com/support/knowledgebase/110"],
     related: ["royal-road-stats", "royal-road-launch-plan"],
     contentSections: [
+      {
+        title: "There is no single useful Royal Road average",
+        body:
+          "A universal average view count would mix new and mature stories, different chapter counts, release schedules, genres, promotions, and abandoned fiction. Total views also grow as more chapters accumulate, so comparing a ten-chapter launch with a hundred-chapter serial produces a number without a stable meaning. A better benchmark is the story's own weekly trend, compared at the same age and with release or promotion events recorded beside it.",
+        bullets: [
+          "Compare stories at a similar age and chapter count when a peer comparison is necessary.",
+          "Separate total fiction views from the movement on newly released chapters.",
+          "Record ads, shoutouts, and schedule changes before interpreting a spike or drop.",
+          "Use averages as questions to investigate, not as pass/fail thresholds."
+        ]
+      },
       {
         title: "Read the two metrics together",
         body:

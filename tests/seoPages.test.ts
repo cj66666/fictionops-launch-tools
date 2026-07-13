@@ -24,7 +24,7 @@ describe("seo pages", () => {
 
   it("finds pages by slug and type", () => {
     expect(findSeoPage("royal-road-views-vs-followers", "guide")?.title).toBe(
-      "Royal Road Views vs Followers"
+      "Royal Road Average Views: Views vs Followers"
     );
     expect(findSeoPage("royal-road-views-vs-followers", "tool")).toBeUndefined();
   });
@@ -43,6 +43,21 @@ describe("seo pages", () => {
     const page = findSeoPage("royal-road-patreon-calculator", "tool");
 
     expect(page?.sources.some((source) => source.includes("chapterchronicles.com"))).toBe(false);
+  });
+
+  it("aligns the second-week pages with validated search intent", () => {
+    expect(findSeoPage("royal-road-launch-plan", "tool")?.primaryKeyword).toBe(
+      "royal road launch checklist"
+    );
+    expect(findSeoPage("shoutout-swap-tracker", "tool")?.primaryKeyword).toBe(
+      "royal road shoutout swap tracker"
+    );
+    expect(findSeoPage("royal-road-views-vs-followers", "guide")?.primaryKeyword).toBe(
+      "royal road average views"
+    );
+    expect(findSeoPage("royal-road-rising-stars", "guide")?.primaryKeyword).toBe(
+      "royal road rising stars readiness checklist"
+    );
   });
 
   it("has structured content for every SEO page", () => {

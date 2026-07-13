@@ -1,0 +1,71 @@
+keyword,cluster,intent,source,priority,page_action
+royal road average views,stats,benchmark,GSC+autocomplete,P1,optimize existing stats page
+royal road views vs followers,stats,diagnostic,existing research,P1,optimize existing views-vs-followers page
+royal road stats explained,stats,informational,existing research,P1,optimize existing stats page
+royal road follower benchmark,stats,benchmark,existing research,P2,supporting section
+royal road follower conversion rate,stats,benchmark,existing research,P2,supporting section
+royal road followers,stats,navigational/informational,autocomplete,P3,observe
+royal road no followers,stats,diagnostic,autocomplete,P2,supporting article
+royal road losing followers,stats,diagnostic,autocomplete,P2,supporting article
+royal road most followers,stats,benchmark,autocomplete,P3,observe
+royal road total views,stats,informational,autocomplete,P2,supporting section
+royal road reading stats,stats,informational,autocomplete,P2,supporting section
+royal road stats tracker,stats,tool,autocomplete,P3,defer product
+royal road launch checklist,launch,tool/checklist,SERP,P1,optimize launch tool
+royal road launch plan,launch,tool,existing page,P1,optimize launch tool
+royal road launch guide,launch,informational,autocomplete,P1,optimize launch guide
+how to launch on royal road,launch,informational,existing research,P1,supporting guide
+royal road posting schedule,launch,planning,autocomplete,P1,optimize launch tool
+royal road release schedule,launch,planning,autocomplete,P1,optimize launch tool
+royal road chapter posting schedule,launch,planning,existing research,P1,supporting section
+best time to post royal road,launch,informational,autocomplete,P2,new article if validated
+royal road posting rules,launch,informational,autocomplete,P2,optimize rules guide
+royal road chapter length,launch,informational,autocomplete,P2,supporting article
+royal road chapter word count,launch,informational,autocomplete,P2,supporting article
+royal road average chapter length,launch,benchmark,autocomplete,P2,supporting article
+how many words per chapter royal road,launch,informational,autocomplete,P2,supporting article
+royal road how many chapters,launch,informational,autocomplete,P2,supporting section
+how many chapters before launching on royal road,launch,informational,existing research,P1,supporting section
+how to start writing on royal road,launch,informational,autocomplete,P3,observe
+web novel launch checklist,launch,checklist,existing research,P2,expand later
+royal road shoutout generator,shoutout,tool,GSC+autocomplete,P2,do not target until feature exists
+royal road shoutout code generator,shoutout,tool,autocomplete,P2,defer product
+royal road shoutout creator,shoutout,tool,autocomplete,P3,defer product
+royal road shoutout code,shoutout,template,autocomplete,P2,supporting template
+royal road shoutout,shoutout,informational,autocomplete,P2,optimize explainer
+royal road shoutout swap,shoutout,informational/tool,autocomplete,P1,optimize tracker
+royal road shoutout swap tracker,shoutout,tool,existing research,P1,optimize tracker
+royal road shoutout swap spreadsheet,shoutout,template,existing research,P1,new template page
+how to do shoutout swaps on royal road,shoutout,informational,existing research,P1,supporting guide
+find royal road shoutout swaps,shoutout,transactional,existing research,P2,supporting guide
+author shoutout swap template,shoutout,template,existing research,P2,new template section
+shoutout swap message template,shoutout,template,existing research,P2,new template section
+royal road review swap,shoutout,informational,autocomplete,P3,avoid conflating reviews and shoutouts
+royal road review swap rules,shoutout,rules,autocomplete,P2,rules content
+royal road rising stars checker,rising-stars,tool,GSC+autocomplete,P2,do not target with current feature
+royal road rising stars tracker,rising-stars,tool,autocomplete,P3,strong competition
+royal road rising stars history,rising-stars,data,autocomplete,P3,strong competition
+royal road rising stars watch,rising-stars,tool,autocomplete,P3,strong competition
+royal road rising stars,rising-stars,informational,autocomplete,P2,optimize guide
+royal road rising star requirements,rising-stars,informational,autocomplete,P1,optimize guide
+royal road how does rising stars work,rising-stars,informational,autocomplete,P1,optimize guide
+royal road how to get on rising stars,rising-stars,informational,autocomplete,P2,trust-safe guide only
+how to get on rising stars royal road,rising-stars,informational,existing research,P2,trust-safe guide only
+royal road rising stars metrics,rising-stars,informational,existing research,P2,supporting guide
+royal road genre rising stars,rising-stars,informational,existing page,P2,optimize existing guide
+royal road rising stars readiness checklist,rising-stars,checklist,strategic derivative,P1,new lightweight tool
+how many chapters for rising stars royal road,rising-stars,informational,existing research,P2,supporting guide
+royal road patreon calculator,patreon,tool,SERP+existing page,P1,optimize calculator
+royal road patreon conversion rate,patreon,benchmark,existing research,P2,supporting content
+royal road patreon earnings,patreon,benchmark,existing research,P2,supporting content
+royal road patreon guide,patreon,informational,autocomplete,P2,optimize calculator explainer
+royal road patreon tiers,patreon,planning,autocomplete,P2,supporting section
+royal road patreon,patreon,informational,autocomplete,P3,too broad
+royal road add patreon,patreon,how-to,autocomplete,P2,supporting guide
+royal road patreon link,patreon,how-to,autocomplete,P3,observe
+royal road vs patreon,patreon,comparison,autocomplete,P3,low intent mismatch
+how many advance chapters patreon,patreon,planning,existing research,P1,optimize calculator
+patreon backlog calculator,patreon,tool,existing research,P1,optimize calculator
+royal road advance chapters,patreon,planning,existing research,P2,supporting section
+patreon tiers for web novel authors,patreon,planning,existing research,P2,supporting article
+royal road backlog,patreon,planning,autocomplete,P2,supporting section

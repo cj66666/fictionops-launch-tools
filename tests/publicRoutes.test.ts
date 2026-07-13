@@ -36,6 +36,6 @@ describe("public site routes", () => {
   it("uses stable content dates for sitemap entries", () => {
     const launchPlan = sitemap().find((entry) => entry.url.endsWith("/tools/royal-road-launch-plan"));
 
-    expect(launchPlan?.lastModified).toEqual(new Date("2026-07-05"));
+    expect(launchPlan?.lastModified).toEqual(new Date("2026-07-13"));
   });
 });
